@@ -13,7 +13,7 @@
     <!-- Custom styles for this template -->
     <link href="SiteBasics.css" rel="stylesheet">
     <link href="TheBasics.css" rel="stylesheet">
-
+    <title>What is an API?</title>
   </head>
   <body>
     <div class="site-wrapper">
@@ -46,7 +46,7 @@
                 <br />
                 <h1>What is an API?</h1>
                 <p id="note">
-                  Note: This guide is meant for people with little-to-no experience. Feel free to skip ahead using the navigation button in the top corner.
+                  Note: This guide is meant for people with little-to-no experience. If you are comfortable with what you see, feel free to skip ahead using the navigation button in the top corner.
                 <p>
               </div>
 
@@ -57,9 +57,10 @@
                   <img id="brain" src="brain.png" />
                   <p id="apiInfo">
                     APIs (Aplication Program Interface) and what they provide, can vary greatly from host to host. Generally, they provide information or functionality that the host
-                    has developed or owns. They then allow you to access and use it on your project via their API setup. The Petfinder API gives you access to
-                    their expansive database, as well as many options for gathering and using the information. We will look more closely at these options in a
-                    little bit.
+                    has developed or owns. They then allow you to access and use it on your project via their API setup. It has clearly defined protocols and tools to shape how you
+                    interact with  and access thair data. APIs provide the programmer of an application or website an easy way to use pre-defined information and functionality, saving
+                    the developer a lot of time. The Petfinder API gives you access to their expansive database, as well as many options for gathering and using the information. We
+                    will get into specifics in a little bit.
                   </p>
                   <p>
                     If you would like to delve deep into the API specifics, here is a
@@ -69,8 +70,46 @@
                   <p>
                     The Petfinder API is a <a href="http://searchcloudstorage.techtarget.com/definition/RESTful-API">RESTful API</a>.
                     The structure of a RESTful API is based on <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>
-                    architecture style. This type of API uses HTTP requests to interact with the data.
+                    architecture style. This style is defined by six constraints that are required in order for an API to be RESTful:
                   </p>
+                  <ul class="rest">
+                    <li>
+                      Client-Server:
+                      <p class="list">
+                        Separates user interface concerns from storage concerns. This means that the user interface and the server can be altered and scaled independently of eachother.
+                        If the database you are accessing changes, while you may get new data, your interface is not affected.
+                      </p>
+                    </li>
+                    <li>
+                      Stateless:
+                      <p class="list">
+                        No client context is stored on the server between requests during client-server comminication. Each client request contains all necessary information, and the state
+                        of the session is held in the client, not the server. The client sends requests when it is ready to transition into a new state. If the session must be in a persistent state, such as for authentication, the session state can be transderred
+                        to a different server.
+                      </p>
+                    </li>
+                    <li>
+                      Cacheable:
+                      <p class="list">
+                        Responses can be cached. Clients must define their responses as either cacheable or not in order to prevent the use of stale or inappropriate data. This feature
+                        improves overall ability and performance.
+                      </p>
+                    </li>
+                    <li>
+                      Layered System:
+                      <p class="list">
+                        A client can't tell if it is in contact with one main server, or intermediary servers. This provides many benefits:
+                        <ul class="rest>"
+                        <li>
+                          Improves system scalability.
+                        </li>
+                        <li>
+
+                        </li>
+                      </ul>
+                      </p>
+                    </li>
+                  </ul>
                   <p>
                     Don't know what that means? Don't worry, you will by the end of this guide.
                   </p>
