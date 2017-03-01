@@ -10,7 +10,7 @@ body {
 
 /*links*/
 a:link{
-  color: #00FF7F;
+  color: ##5F9EA0;
 }
 a:visited{
   color: #FF7F50;
@@ -37,8 +37,8 @@ h5{
 p{
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20%;
-  padding-right: 20%;
+  padding-left: 19%;
+  padding-right: 19%;
 }
 
 img {
@@ -70,9 +70,18 @@ img {
   background-color: #e6d9f2;
   color: #663399;
 }
+
+#white{
+  background-color: #FFFFFF;
+  color: #663399;
+}
+a.btn-lg{
+  color: #663399;
+}
 .wells{
   margin-left: -30%;
   margin-right: -30%;
+  padding-top: 12px;
 }
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
@@ -117,6 +126,10 @@ img {
   color: #663399;
   background: rgba(0,0,0,0);
   border: solid 3px #663399;
+}
+
+#next{
+  padding-top: 10px;
 }
 
 /* Header */

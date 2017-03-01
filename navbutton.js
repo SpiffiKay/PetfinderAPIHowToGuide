@@ -9,12 +9,12 @@ button.addEventListener("click", function(event){
     window.location.href = "https://spiffikay.github.io/TheBasics.html";
   });
   setup.addEventListener("click", function(event){
-    console.log("setup!");
+    window.location.href = "https://spiffikay.github.io/SetItUp.html";
   });
   use1.addEventListener("click", function(event){
-    console.log("use1!");
+    window.location.href = "https://spiffikay.github.io/PutItToUse.html";
   });
   use2.addEventListener("click", function(event){
-    console.log("use2!");
+      window.location.href = "https://spiffikay.github.io/PutItToUse2.html";
   });
 });

@@ -1,0 +1,15 @@
+#note{
+  font-size: 90%;
+  font-weight: bold;
+  padding-left: 0%;
+  padding-right: 50%;
+  color: salmon;
+}
+
+#brain{
+  display: block;
+  float: right;
+  height: 30%;
+  width: 30%;
+  padding-right: 10%;
+}

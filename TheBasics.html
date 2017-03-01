@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!-- Custom styles for this template -->
     <link href="SiteBasics.css" rel="stylesheet">
+    <link href="TheBasics.css" rel="stylesheet">
 
   </head>
   <body>
@@ -30,7 +31,7 @@
                       <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
                     </button>
                     <ul class="dropdown-menu">
-                      <li id="basic"><a href="#">The Basics</a></li>
+                      <li id="basic"><a href="#">What is an API?</a></li>
                       <li id="setup"><a href="#">Set It Up</a></li>
                       <li id="use1"><a href="#">Implementation 1</a></li>
                       <li id="use2"><a href="#">Implementation 2</a></li>
@@ -43,22 +44,48 @@
               <div class="site-heading">
                 <br />
                 <br />
-                <h1>The Basics</h1>
+                <h1>What is an API?</h1>
+                <p id="note">
+                  Note: This guide is meant for people with little-to-no experience. Feel free to skip ahead using the navigation button in the top corner.
+                <p>
               </div>
 
               <div class="wells" id="lightest">
-                <h3>First things first.</h3>
-                <p>If you haven't already, you need to sign up for a Petfinder account on their main site <a href="https://www.petfinder.com/user/register?next=https://www.petfinder.com/developers/api-key">here.</a></p>
-                <p>Once you have an account, you will access everything for the API from the developer page <a href="https://www.petfinder.com/developers/api-key">as seen below.</a></p>
-
-              </div>
-
+                <h3>API</h3>
+                <div class="clearfix">
+                  <h4>What is an API?</h4>
+                  <img id="brain" src="brain.png" />
+                  <p id="apiInfo">
+                    APIs (Aplication Program Interface) and what they provide, can vary greatly from host to host. Generally, they provide information or functionality that the host
+                    has developed or owns. They then allow you to access and use it on your project via their API setup. The Petfinder API gives you access to
+                    their expansive database, as well as many options for gathering and using the information. We will look more closely at these options in a
+                    little bit.
+                  </p>
+                  <p>
+                    If you would like to delve deep into the API specifics, here is a
+                    <a href="https://www.programmableweb.com/news/apis-are-user-interfaces-just-different-users-mind/analysis/2015/12/03"> 6-part explanation</a>.
+                  </p>
+                  <h4>RESTful API</h4>
+                  <p>
+                    The Petfinder API is a <a href="http://searchcloudstorage.techtarget.com/definition/RESTful-API">RESTful API</a>.
+                    The structure of a RESTful API is based on <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>
+                    architecture style. This type of API uses HTTP requests to interact with the data.
+                  </p>
+                  <p>
+                    Don't know what that means? Don't worry, you will by the end of this guide.
+                  </p>
+                </div>
+            </div>
+            <div id="next">
+                <a href="#" id="nextPage" class="btn btn-lg btn-default">Set Up Credentials!</a>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
     <script src="navbutton.js"></script>
+    <script src="TheBasics.js"></script>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
