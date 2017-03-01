@@ -6,7 +6,7 @@ var use2 = document.getElementById("use2");
 
 button.addEventListener("click", function(event){
   basic.addEventListener("click", function(event){
-    console.log("basic!");
+    window.location = "https://spiffikay.github.io/TheBasics.html";
   });
   setup.addEventListener("click", function(event){
     console.log("setup!");
