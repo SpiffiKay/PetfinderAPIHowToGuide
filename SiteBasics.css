@@ -96,10 +96,10 @@ a.btn-lg{
   padding-left: 2%;
   list-style-type: square;
 }
-.fiddleL{
+.fiddle{
   display: block;
   margin-left: auto;
-margin-right: auto;
+  margin-right: auto;
   padding-left: 20%
   wisth: 50%;
 }
@@ -139,12 +139,6 @@ margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
   float: left;
-}
-
-.nextPage{
-  width: 40%;
-  margin-left: auto;
-  margin-right: auto;
 }
 /* Custom default button */
 .btn-default,
