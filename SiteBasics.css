@@ -3,15 +3,11 @@ html,
 body {
   height: 100%;
   background-color: #FFFFFF;
-}
-body {
   color: #663399;
 }
-
-
 /*links*/
 a:link{
-  color: ##5F9EA0;
+  color: #5F9EA0;
 }
 a:visited{
   color: #FF7F50;
@@ -80,9 +76,10 @@ a.btn-lg{
   color: #663399;
 }
 .wells{
-  margin-left: -30%;
-  margin-right: -30%;
+  margin-left: -25%;
+  margin-right: -25%;
   padding-top: 12px;
+  padding-bottom: 20px;
 }
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
@@ -93,7 +90,7 @@ a.btn-lg{
 }
 .site-wrapper-inner {
   display: table-cell;
-  vertical-align: top;
+  /vertical-align: top;
 }
 
 .site-container {
@@ -130,7 +127,8 @@ a.btn-lg{
 }
 
 #next{
-  padding-top: 10px;
+  padding-top: 20px;
+  padding-bottom: 50px;
 }
 
 /* Header */
@@ -156,15 +154,6 @@ a.btn-lg{
 
 /*Affix and center*/
 @media (min-width: 768px) {
-  /* Pull out the header and footer */
-  .navigate {
-    position: fixed;
-    top: 0;
-  }
-  .mastfoot {
-    position: fixed;
-    bottom: 0;
-  }
   /* Start the vertical centering */
   .site-wrapper-inner {
     vertical-align: middle;

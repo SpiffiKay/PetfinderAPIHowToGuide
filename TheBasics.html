@@ -19,7 +19,7 @@
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="site-container">
-          <div class="navigate clearfix">
+          <div class="navigate clearfix-site">
             <div class="inner">
               <!--top of page navigation-->
               <div class="navbar-header">
@@ -46,73 +46,92 @@
                 <br />
                 <h1>What is an API?</h1>
                 <p id="note">
-                  Note: This guide is meant for people with little-to-no experience. If you are comfortable with what you see, feel free to skip ahead using the navigation button in the top corner.
+                  Note: This guide is meant for people with little-to-no experience. Feel free to skip ahead
+                  using the navigation button in the top corner at any time.
                 <p>
               </div>
 
               <div class="wells" id="lightest">
                 <h3>API</h3>
-                <div class="clearfix">
+                <div class="clearfix-site">
                   <h4>What is an API?</h4>
                   <img id="brain" src="brain.png" />
                   <p id="apiInfo">
-                    APIs (Aplication Program Interface) and what they provide, can vary greatly from host to host. Generally, they provide information or functionality that the host
-                    has developed or owns. They then allow you to access and use it on your project via their API setup. It has clearly defined protocols and tools to shape how you
-                    interact with  and access thair data. APIs provide the programmer of an application or website an easy way to use pre-defined information and functionality, saving
-                    the developer a lot of time. The Petfinder API gives you access to their expansive database, as well as many options for gathering and using the information. We
-                    will get into specifics in a little bit.
+                    API stands for Application Program Interface. What they provide can vary greatly
+                    from host to host. Generally, APIs provide access to information or functionality
+                    that the host has developed or owns Each API has clearly defined protocols and tools
+                    to shape how you interact with and access their data. Basically, they provide an easy
+                    way to use pre-defined information and functionality, saving you, the developer, a lot of time.
                   </p>
                   <p>
-                    If you would like to delve deep into the API specifics, here is a
+                    The Petfinder API gives you access to their expansive database, as well as many options for
+                    gathering and using the information, but we will get into specifics in a little bit.
+                  </p>
+                  <p>
+                    If you would like to delve deeper into API specifics, here is a
                     <a href="https://www.programmableweb.com/news/apis-are-user-interfaces-just-different-users-mind/analysis/2015/12/03"> 6-part explanation</a>.
                   </p>
+                  <br />
                   <h4>RESTful API</h4>
                   <p>
                     The Petfinder API is a <a href="http://searchcloudstorage.techtarget.com/definition/RESTful-API">RESTful API</a>.
-                    The structure of a RESTful API is based on <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>
-                    architecture style. This style is defined by six constraints that are required in order for an API to be RESTful:
+                    The structure of a RESTful API is based on the <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>
+                    architecture style. In order for an API to be RESTful it must abide by these six required constraints:
                   </p>
                   <ul class="rest">
                     <li>
                       Client-Server:
                       <p class="list">
-                        Separates user interface concerns from storage concerns. This means that the user interface and the server can be altered and scaled independently of eachother.
-                        If the database you are accessing changes, while you may get new data, your interface is not affected.
+                        User interface concerns from storage concerns are completely separate--the user interface and the server can be altered and scaled
+                        independently of each other. This means if the database you are accessing changes your interface is not affected, and vice versa.
+                        This frees both you and the host to change different aspects on your end as you see fit without worrying about “breaking” other parts.
                       </p>
                     </li>
                     <li>
                       Stateless:
                       <p class="list">
-                        No client context is stored on the server between requests during client-server comminication. Each client request contains all necessary information, and the state
-                        of the session is held in the client, not the server. The client sends requests when it is ready to transition into a new state. If the session must be in a persistent state, such as for authentication, the session state can be transderred
-                        to a different server.
+                        No client context is stored on the server between requests during client-server communication. The state of the session, as well as all
+                        the necessary information, is in the client request. If the session must be in a persistent state, such as for authentication, the
+                        session state can be transferred to a different server.
+                      </p>
+                      <p class="list">
+                        To transition to a new state, the client sends requests to the server. If there are one or more outstanding requests, the client is “in
+                        transition.” While a process may be comprised of many requests and states, each individual request can stand alone and is a potential
+                        end or beginning state to a process.
                       </p>
                     </li>
                     <li>
                       Cacheable:
                       <p class="list">
-                        Responses can be cached. Clients must define their responses as either cacheable or not in order to prevent the use of stale or inappropriate data. This feature
-                        improves overall ability and performance.
+                        Both clients and intermediary servers can cache responses. Clients must define their responses as either cacheable or not. If a response
+                        has time sensitive data, if it were cached, the information may become stale. Being able to flag whether the response is cacheable or not
+                        can eliminate excess client-server interactions improving overall performance.
                       </p>
                     </li>
                     <li>
                       Layered System:
                       <p class="list">
-                        A client can't tell if it is in contact with one main server, or intermediary servers. This provides many benefits:
-                        <ul class="rest>"
-                        <li>
-                          Improves system scalability.
-                        </li>
-                        <li>
-
-                        </li>
-                      </ul>
+                        A client can be communicating with the main server, or an intermediary server, and the client generally cannot tell which it is in contact
+                        with. This enables load balancing and helps in terms of security.
+                      </p>
+                    </li>
+                    <li>
+                      Code on Demand:
+                      <p class="list">
+                        This is the only constraint that could be considered optional. While it may never be utilized, a server can transfer executable code to
+                        the client, temporarily changing the client’s functionality.
+                      </p>
+                    </li>
+                    <li>
+                      Uniform Interface
+                      <p class="list">
+                        The REST system design is anchored around the idea of each part having the ability to function independently from the whole. This is the
+                        base of the RESTful concept, and can only be achieved if the interface is uniform. Because each part does not rely on the other parts,
+                        they can change without effecting all the other parts. We could go into great detail as to how this is implemented, but this is a little
+                        outside the scope of this guide.
                       </p>
                     </li>
                   </ul>
-                  <p>
-                    Don't know what that means? Don't worry, you will by the end of this guide.
-                  </p>
                 </div>
             </div>
             <div id="next">
