@@ -42,8 +42,8 @@ img {
   display:block;
   margin-left: auto;
   margin-right: auto;
-  height: 60%;
-  width: 60%;
+  height: 40%;
+  width: 40%;
   padding-top: 5px;
   padding-bottom: 20px;
 }
@@ -61,6 +61,10 @@ img {
 #light{
   background-color: #b38cd9;
   color: #FFFFFF;
+}
+#lighter{
+  background-color: #ccb3e6;
+  color: #663399;
 }
 
 #lightest{
@@ -81,6 +85,18 @@ a.btn-lg{
   padding-top: 12px;
   padding-bottom: 20px;
 }
+.rest{
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20%;
+  padding-right: 19%;
+
+}
+.list{
+  padding-left: 2%;
+  list-style-type: square;
+}
+
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
   display: table;
@@ -153,7 +169,7 @@ a.btn-lg{
 }
 
 .site-heading{
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 }
 /*Affix and center*/
 @media (min-width: 768px) {

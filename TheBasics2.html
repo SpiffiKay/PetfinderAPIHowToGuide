@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
   <head>
 
@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!-- Custom styles for this template -->
     <link href="SiteBasics.css" rel="stylesheet">
-
+    <link href="TheBasics2.css" rel="stylesheet">
+    <title>GET Method and JSON</title>
   </head>
   <body>
     <div class="site-wrapper">
@@ -44,26 +45,67 @@
               <div class="site-heading">
                 <br />
                 <br />
-                <h1>Use the API Part I</h1>
+                <h1>GET method and JSON</h1>
               </div>
 
-              <div class="wells" id="med">
-                <h3>API Requests</h3>
-                <h4>GET method</h4>
+              <div class="wells" id="lighter">
+                <h3>GET Method</h3>
                 <p>
-                  To access the Petfinder API we have to use the GET method, which is a standard HTTP request method.
+                  To access the Petfinder API we have to use GET requests, which sends the target information via the URL.
                 </p>
+                <h4>The URL</h4>
+                <p>
+                  URL stands for Uniform Resource Locater. It is the address of the resource you are requesting.
+                  The URL can be broken down into basic parts, and we will be building URLs to request information from the
+                  API, so it is important to understand each part. Much like your home address, which is comprised of your city,
+                  state, street, house number, and possibly apartment numbers, the URL is also comprised of various parts,
+                  which all together leads to your destination.
+                </p>
+                <p>
+                <code>http://api.petfinder.com/my.method?key=12345&arg1=foo&token=67890&sig=abcdef</code>
+                </p>
+                <p>
+                  <ul class="rest">
+                    <li>
+                    <code>http:</code> Hypertext Transfer Protocol: This is the request-response protocol between the client and server.
 
+                    </li>
+                    <li>
+                      <code>api.petfinder.com</code>  Domain name. This is pretty self explanatory.
+                    </li>
+                    <li>
+                      <code>my.method</code>  Path: Directs to a specific file or directory on the server.
+                    </li>
+                    <li>
+                      <code>?key=12345&arg1=foo&token=67890&sig=abcdef</code> Query: represents the information
+                      being transferred to the server in a GET request. Each parameter is formatted as <code>name=info</code>
+                      with <code>&</code> between each set of values. For example <code>key=12345</code> is representative of your API key.
+                </p>
+                <p>
+
+                </p>
+              </div>
+              <div class="wells" id="white">
+                <h3>JSON</h3>
+                <p>
+                  <a href="http://www.json.org/">JSON</a> stands for JavaScript Object Notation. It is a data syntax. When requesting data from
+                  the API, all of the data must be in text form. Javascript objects can easily be changed into JSON.
+                </p>
+                <p>
+                  JavaScript and JSON objects are very similar, and it is easy to change from one to another.
+
+                </p>
+                <script async src="//jsfiddle.net/spiffiKay/kbqmvwk0/embed/js,html,result/"></script>
               </div>
 
               <div id="next">
-              <a href="#" id="nextPage" class="btn btn-lg btn-default">A Little More Advanced</a>
+              <a href="#" id="nextPage" class="btn btn-lg btn-default">Setup Your Access</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    <script src="PutItToUse.js"></script>
+    <script src="TheBasics2.js"></script>
     <script src="navbutton.js"></script>
     <!-- Bootstrap core JavaScript
     ================================================== -->

@@ -53,6 +53,9 @@ p{
   border: solid 3px #663399;
 }
 
+#note{
+  font-size: 80%;
+}
 /* Header */
 .navigate-nav > li {
   display: inline-block;

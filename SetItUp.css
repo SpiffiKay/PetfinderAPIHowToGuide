@@ -1,0 +1,23 @@
+/*links*/
+a:link{
+  color: #7FFF00;
+}
+a:visited{
+  color: #7FFF00;
+}
+a:hover{
+  color: #5F9EA0;
+}
+
+a.btn-lg{
+  color: #663399;
+}
+
+#auth{
+  display: block;
+  float: right;
+  height: 40%;
+  width: 40%;
+  padding-left: 10%;
+  padding-right: 10%;
+}

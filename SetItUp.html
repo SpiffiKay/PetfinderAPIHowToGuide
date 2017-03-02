@@ -12,13 +12,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!-- Custom styles for this template -->
     <link href="SiteBasics.css" rel="stylesheet">
-
+    <link href="SetItup.css" rel="stylesheet">
+    <title>Set Up Your API</title>
   </head>
   <body>
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="site-container">
-          <div class="navigate clearfix">
+          <div class="navigate clearfix-site">
             <div class="inner">
               <!--top of page navigation-->
               <div class="navbar-header">
@@ -31,6 +32,7 @@
                     </button>
                     <ul class="dropdown-menu">
                       <li id="basic"><a href="#">What is an API?</a></li>
+                      <li id="basic2"><a href="#">GET methods and JSON</a></li>
                       <li id="setup"><a href="#">Set It Up</a></li>
                       <li id="use1"><a href="#">Implementation 1</a></li>
                       <li id="use2"><a href="#">Implementation 2</a></li>
@@ -41,6 +43,7 @@
               </div>
 
               <div class="site-heading">
+                <img id="auth" src="auth.png"/>
                 <br />
                 <br />
                 <h1>Set Up Your API</h1>
@@ -48,12 +51,36 @@
 
               <div class="wells" id="light">
                 <h3>First things first.</h3>
-                <p>If you haven't already, you need to sign up for a Petfinder account on their main site <a href="https://www.petfinder.com/user/register?next=https://www.petfinder.com/developers/api-key">here.</a></p>
-                <p>Once you have an account, you will access everything for the API from the developer page <a href="https://www.petfinder.com/developers/api-key">as seen below.</a></p>
+                <p>
+                  If you haven't already, you need to sign up for a Petfinder account on their main site <a href="https://www.petfinder.com/user/register?next=https://www.petfinder.com/developers/api-key">here.</a>
+                  Once you have an account, you will access everything for the API from the <a href="https://www.petfinder.com/developers/api-key">developer page</a> as seen below.
+                </p>
+                  <img src="devLogin.jpg"/>
+                <p>
+                  Once you log in, you must apply for your API key. This is how Petfinder tracks the frequency and identity of users accessing their database. There is an option to provide your site's address,
+                  and I recommend that you do as it allows Petfinder to add a level of security. If anyone else tries to fraudulently use your key from a different site, they can track where the call came from,
+                  and take measures to protect both you and their database.
+                </p>
+                <p>
+                  There are limits to how often you can access the database, which is stated in the <a href="https://www.petfinder.com/developers/api-docs">developer documentation page</a>. The limits are
+                  incredibly high and you are unlikely to reach them, but if you find yourself reaching it on a regular basis, you can contact them to request to have your limits increased.
+                </p>
+                <img src="APIKey.jpg"/>
+                <p>
+                  Petfinder provides you with an API Key and an API Secret. It is important to protect both of these. The Petfinder developer page states that you can use the key publically, and to hide the
+                  API secret, as it is used for more sensitive information. This is not what you should do in general. It is good practice to hide both from the documentation of your site. That being said,
+                  in the case of this guide, I will be openly using my API Key to keep things simple.
+                </p>
+                <p>
+                  You can read more about how to keep your API key safe
+                  <a href="http://billpatrianakos.me/blog/2016/02/15/securing-api-keys-in-a-javascript-single-page-app/">here</a>.
+                </p>
 
               </div>
+
+
               <div id="next">
-              <a href="#" id="nextPage" class="btn btn-lg btn-default">Put it to Use!</a>
+              <a href="#" id="nextPage" class="btn btn-lg btn-default">Put it to Use</a>
               </div>
             </div>
           </div>
@@ -61,6 +88,7 @@
       </div>
 
     <script src="navbutton.js"></script>
+    <script src="SetItUp.js"></script>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
