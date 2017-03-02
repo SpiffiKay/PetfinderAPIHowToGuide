@@ -99,7 +99,8 @@ a.btn-lg{
 .fiddleL{
   display: block;
   float: left;
-  wisth: 505;
+  padding-left: 20%
+  wisth: 50%;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
