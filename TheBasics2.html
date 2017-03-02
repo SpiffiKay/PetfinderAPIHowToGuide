@@ -80,22 +80,39 @@
                       <code>?key=12345&arg1=foo&token=67890&sig=abcdef</code> Query: represents the information
                       being transferred to the server in a GET request. Each parameter is formatted as <code>name=info</code>
                       with <code>&</code> between each set of values. For example <code>key=12345</code> is representative of your API key.
+                    </li>
+                  </ul>
                 </p>
                 <p>
-
+                  Here is a fiddle with the code of a basic GET form. You can't send a GET call from fiddle, but this at least gives you code to play with.
+                  <script async src="//jsfiddle.net/spiffiKay/r315vL22/embed/html,result/"></script>
+                </p>
+                <p>
+                  This is the simple form this code creates:
+                  <img src="GETForm.png" />
+                  And the query line at the end of the URL:
+                  <img id="query" src="queryline.png" />
+                  As you can see for the first field text_input=Send+me%21 (%21 for the !) and numerical_input=4321 with a & in between. This will be the
+                  case for any information sent in a GET request.  
                 </p>
               </div>
               <div class="wells" id="white">
                 <h3>JSON</h3>
                 <p>
                   <a href="http://www.json.org/">JSON</a> stands for JavaScript Object Notation. It is a data syntax. When requesting data from
-                  the API, all of the data must be in text form. Javascript objects can easily be changed into JSON.
+                  the API, all of the data must be in text form (JSON). Javascript objects can easily be changed into JSON, and vice versa, making
+                  sending and using data simple.
                 </p>
                 <p>
-                  JavaScript and JSON objects are very similar, and it is easy to change from one to another.
+                  JavaScript and JSON objects are very similar, and it is easy to change from one to another. A JSON is just a JavaScript object converted into a string.
+                  <code>JSON.stringify()</code> will turn a JS object into a JSON string and <code>JSON.parse()</code> turns the JSON string into a JavaScrpt object.
                 </p>
-                  <script async src="//jsfiddle.net/spiffiKay/bz8o1ymh/embed/js,html,result/"></script>
-                </div>
+                <img id="objects" src="JSONtoJS.png" />
+                <p>
+                  Here is an example of a JSON object parsed into the JavaScript object that is used on the HTML page. Feel free to tinker with it a bit.
+                </p>
+                <script async src="//jsfiddle.net/spiffiKay/bz8o1ymh/embed/js,html,result/"></script>
+              </div>
 
               <div id="next">
               <a href="#" id="nextPage" class="btn btn-lg btn-default">Setup Your Access</a>
