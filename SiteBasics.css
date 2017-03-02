@@ -96,6 +96,13 @@ a.btn-lg{
   padding-left: 2%;
   list-style-type: square;
 }
+.fiddle{
+  display: block;
+  margin-left:
+margin-right: auto;
+  padding-left: 20%
+  wisth: 50%;
+}
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
