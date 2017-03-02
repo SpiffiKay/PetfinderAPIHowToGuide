@@ -140,6 +140,12 @@ margin-right: auto;
   padding-right: 20px;
   float: left;
 }
+
+.nextPage{
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
 /* Custom default button */
 .btn-default,
 .btn-default:hover,
