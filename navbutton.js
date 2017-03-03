@@ -5,6 +5,7 @@ var setup = document.getElementById("setup");
 var use1 = document.getElementById("use1");
 var use2 = document.getElementById("use2");
 
+
 button.addEventListener("click", function(event){
   basic.addEventListener("click", function(event){
     window.location.href = "https://spiffikay.github.io/TheBasics.html";

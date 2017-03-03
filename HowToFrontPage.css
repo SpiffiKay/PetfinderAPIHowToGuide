@@ -4,24 +4,29 @@ html,
 body {
   height: 100%;
   background-color: #FFFFFF;
-}
-body {
   color: #663399;
 }
 
-h1,
-h3{
+/*formatting*/
+h1{
   padding-top: 12px;
   padding-bottom: 2px;
   padding-left: 40px;
   padding-right: 40px;
 }
-p{
+
+h3{
+  padding-bottom: 15px;
   padding-left: 40px;
   padding-right: 40px;
 }
 
-/* Extra markup and styles for table-esque vertical and horizontal centering */
+p{
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: 95%;
+}
+
 .site-wrapper {
   display: table;
   width: 100%;
@@ -44,7 +49,7 @@ p{
   padding: 30px;
 }
 
-/* Custom default button */
+/*default button */
 .btn-default,
 .btn-default:hover,
 .btn-default:focus {
@@ -53,13 +58,11 @@ p{
   border: solid 3px #663399;
 }
 
-#note{
-  font-size: 80%;
-}
 /* Header */
 .navigate-nav > li {
   display: inline-block;
 }
+
 .navigate-nav > li + li {
   margin-left: 20px;
 }
@@ -72,9 +75,16 @@ p{
 .site {
   padding: 0 20px;
 }
+
 .site .btn-lg {
   padding: 10px 20px;
   font-weight: bold;
+}
+
+#note{
+  color: #5F9EA0;
+  font-size: 90%;
+  padding-bottom: 15px;
 }
 
 /*Affix and center*/
@@ -84,14 +94,17 @@ p{
     position: fixed;
     top: 0;
   }
+
   .mastfoot {
     position: fixed;
     bottom: 0;
   }
+
   /* Start the vertical centering */
   .site-wrapper-inner {
     vertical-align: middle;
   }
+
   /* Handle the widths */
   .navigate,
   .mastfoot,
@@ -99,6 +112,7 @@ p{
     width: 100%; /* Must be percentage or pixels for horizontal alignment */
   }
 }
+
 @media (min-width: 992px) {
   .navigate,
   .mastfoot,

@@ -11,7 +11,7 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!-- Custom styles for this template -->
-    <link href="SiteBasics.css" rel="stylesheet">
+    <link href="Universal.css" rel="stylesheet">
     <link href="TheBasics.css" rel="stylesheet">
     <title>What is an API?</title>
   </head>
@@ -32,10 +32,10 @@
                     </button>
                     <ul class="dropdown-menu">
                       <li id="basic"><a href="#">What is an API?</a></li>
-                      <li id="basic2"><a href="#">GET methods and JSON</a></li>
+                      <li id="basic2"><a href="#">GET, JSON and jQuery</a></li>
                       <li id="setup"><a href="#">Set It Up</a></li>
-                      <li id="use1"><a href="#">Implementation 1</a></li>
-                      <li id="use2"><a href="#">Implementation 2</a></li>
+                      <li id="use1"><a href="#">Basic API Use</a></li>
+                      <li id="use2"><a href="#">Advanced API Use</a></li>
                     </ul>
                     </div>
                   </ul>
@@ -53,89 +53,95 @@
                 <h3>API</h3>
                 <h4>What is an API?</h4>
                   <p id="apiInfo">
-                    API stands for Application Program Interface. What they provide can vary greatly
-                    from host to host. Generally, APIs provide access to information or functionality
-                    that the host has developed or owns Each API has clearly defined protocols and tools
-                    to shape how you interact with and access their data. Basically, they provide an easy
-                    way to use pre-defined information and functionality, saving you, the developer, a lot of time.
+                    <a href="https://www.programmableweb.com/news/apis-are-user-interfaces-just-different-users-mind/analysis/2015/12/03">API</a> stands for Application Program Interface.
+                    What they provide can vary greatly from host to host. Generally, APIs provide access to information or functionality that the host has developed
+                    or owns, while abstracting the underlying implementation. Each API has clearly defined protocols and tools to shape how you interact with and access
+                    their data. Developers can build an application around one or more APIs making the development process much easier and more efficient.
+                  </p>
+                <h4>Web API</h4>
+                  <p>
+                    Developers usually interact with <a href="https://developer.mozilla.org/en-US/docs/WebAPI">web APIs</a> via sending HTTP requests, then receiving a response of data in
+                    in <a href="https://www.w3schools.com/xml/xml_whatis.asp">XML</a> or <a href="https://www.w3schools.com/js/js_json_intro.asp">JSON</a> format. The developer
+                    then uses this data in their own applications, often allowing the data to reach new and different users than would have otherwise been reached.
                   </p>
                   <p>
-                    The Petfinder API gives you access to their expansive database, as well as many options for
-                    gathering and using the information, but we will get into specifics in a little bit.
+                    The Petfinder API gives access to their expansive database, as well as many options for gathering and using the information, but we will get into specifics in a little bit.
                   </p>
-                  <p>
-                    If you would like to delve deeper into API specifics, here is a
-                    <a href="https://www.programmableweb.com/news/apis-are-user-interfaces-just-different-users-mind/analysis/2015/12/03"> 6-part explanation</a>.
-                  </p>
-
                   <h4>RESTful API</h4>
                   <p>
                     The Petfinder API is a <a href="http://searchcloudstorage.techtarget.com/definition/RESTful-API">RESTful API</a>.
                     The structure of a RESTful API is based on the <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>
                     architecture style. In order for an API to be RESTful it must abide by these six required constraints:
                   </p>
+                <div class="dropdown">
                   <ul class="rest">
-                    <li>
-                      Client-Server:
+                    <li><button type="button" class="btn btn-info" data-toggle="collapse" data-target="#client">Client-Server  <span class="caret"></span></button>
+                      <div id="client" class="collapse">
                       <p class="list">
-                        User interface concerns from storage concerns are completely separate--the user interface and the server can be altered and scaled
-                        independently of each other. This means if the database you are accessing changes your interface is not affected, and vice versa.
-                        This frees both you and the host to change different aspects on your end as you see fit without worrying about “breaking” other parts.
+                        Keeping the user interface concerns and storage concerns completely separate allows both to be altered and scaled
+                        independently of each other. This means your interface is not affected if the database you are accessing changes, and vice versa.
+                        Both you and the host are free to change different aspects on your respective end without worrying about “breaking” the other parts.
                       </p>
+                    </div>
                     </li>
-                    <li>
-                      Stateless:
+                    <li><button type="button" class="btn btn-info" data-toggle="collapse" data-target="#state">Stateless  <span class="caret"></span></button>
+                      <div id="state" class="collapse">
                       <p class="list">
                         No client context is stored on the server between requests during client-server communication. The state of the session, as well as all
                         the necessary information, is in the client request. If the session must be in a persistent state, such as for authentication, the
-                        session state can be transferred to a different server.
+                        session state can be transferred to a different, intermediary server.
                       </p>
                       <p class="list">
-                        To transition to a new state, the client sends requests to the server. If there are one or more outstanding requests, the client is “in
+                        To transition to a new state, the client sends requests to the server. If there are one or more outstanding requests, the client is considered “in
                         transition.” While a process may be comprised of many requests and states, each individual request can stand alone and is a potential
                         end or beginning state to a process.
                       </p>
-                    </li>
-                    <li>
-                      Cacheable:
+                    </div>
+                  </li>
+                  <li><button type="button" class="btn btn-info" data-toggle="collapse" data-target="#cache">Cacheable  <span class="caret"></span></button>
+                    <div id="cache" class="collapse">
                       <p class="list">
                         Both clients and intermediary servers can cache responses. Clients must define their responses as either cacheable or not. If a response
                         has time sensitive data, if it were cached, the information may become stale. Being able to flag whether the response is cacheable or not
                         can eliminate excess client-server interactions improving overall performance.
                       </p>
-                    </li>
-                    <li>
-                      Layered System:
+                    </div>
+                  </li>
+                  <li><button type="button" class="btn btn-info" data-toggle="collapse" data-target="#layered">Layered System  <span class="caret"></span></button>
+                    <div id="layered" class="collapse">
                       <p class="list">
-                        A client can be communicating with the main server, or an intermediary server, and the client generally cannot tell which it is in contact
-                        with. This enables load balancing and helps in terms of security.
+                        When a client is communicating with the API, they have no way of knowing if they are interacting with the main server or an intermediary server.
+                        This enables load balancing, which is more efficient, and helps in terms of security.
                       </p>
-                    </li>
-                    <li>
-                      Code on Demand:
+                    </div>
+                  </li>
+                  <li><button type="button" class="btn btn-info" data-toggle="collapse" data-target="#code">Code on Demand  <span class="caret"></span></button>
+                    <div id="code" class="collapse">
                       <p class="list">
                         This is the only constraint that could be considered optional. While it may never be utilized, a server can transfer executable code to
                         the client, temporarily changing the client’s functionality.
                       </p>
-                    </li>
-                    <li>
-                      Uniform Interface
+                    </div>
+                  </li>
+                  <li><button type="button" class="btn btn-info" data-toggle="collapse" data-target="#uniform">Uniform Interface  <span class="caret"></span></button>
+                    <div id="uniform" class="collapse">
                       <p class="list">
-                        The REST system design is anchored around the idea of each part having the ability to function independently from the whole. This is the
-                        base of the RESTful concept, and can only be achieved if the interface is uniform. Because each part does not rely on the other parts,
-                        they can change without effecting all the other parts. We could go into great detail as to how this is implemented, but this is a little
-                        outside the scope of this guide.
+                        The REST system design is reliant on the idea of individual functionality of each part of the whole. This is the base of the RESTful concept,
+                        and can only be achieved if every aspect of the interface is uniform. Because each part does not rely on the other parts, they can change without
+                        affecting them. We could go into great detail as to how this is implemented, but this is a little outside the scope of this guide.
                       </p>
-                    </li>
-                  </ul>
-                  <p>
-                     The most common way to use RESTful APIs is to use HTTP protocol. Using GET, POST, PUT, and DELETE methods. The Petfinder API currently only
-                     uses the GET method, so that is where our focus will lie.
-                  </p>
-                </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <p>
+                The most common way to use RESTful APIs is to use HTTP protocol. Using GET, POST, PUT, and DELETE methods. The Petfinder API currently only
+                uses the GET method, so that is where our focus will lie.
+              </p>
+            </div>
 
             <div id="next">
-                <a href="#" id="nextPage" class="btn btn-lg btn-default">GET methods and JSON</a>
+                <a href="#" id="nextPage" class="btn btn-lg btn-default">GET, JSON, jQuery  <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
             </div>
           </div>
         </div>
