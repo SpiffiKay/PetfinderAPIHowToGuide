@@ -134,7 +134,8 @@
                 <p>
                   The white question mark signifies the beginning of the query. The label and input for the first field on the form are in pink.
                   <code>text_input</code> is the label and <code>Send+me%21</code> (%21 is the !) is the input, and their relation to each other is signified with  <code>=</code>.
-                  The green ampersand links the two fields from the form together. There is generally an ampersand between each set of data sent.   The information for the second field is in blue.
+                  The green ampersand <code>&</code>links the two fields from the form together. There is generally an ampersand between each set of data sent.
+                   The information for the second field <code>numerical_input=4321</code> is in blue.
                 </p>
                 <p>
                   Hopefully this gives you a better understanding of what all the seemingly random code at the end of the URL means.
@@ -145,17 +146,25 @@
                 <h3>JSON</h3>
                 <p>
                   <a id="tooBright" href="http://www.json.org/">JSON</a> stands for JavaScript Object Notation. It is a data syntax. When requesting data from
-                  the API, all of the data must be sent in text form (JSON). Javascript objects can easily be changed into JSON, and vice versa, making
+                  the API, all the data must be sent in text form. Communications with this API can be in XML or JSON format. XML is a little dated and JSON is
+                  more widely used now, so we will be sticking with JSON. Javascript objects can easily be changed into JSON, and vice versa, making
                   sending and using data simple.
                 </p>
                 <p>
-                  JavaScript and JSON objects are very similar, and it is easy to change from one to another. A JSON is just a JavaScript object converted into a string.
-                  <code>JSON.stringify()</code> will turn a JS object into a JSON string and <code>JSON.parse()</code> turns the JSON string into a JavaScrpt object.
+                  JavaScript and JSON objects are very similar, and it is easy to change from one type of object to another. A JSON object is basically a JavaScript object converted into a string.
+                  <code>JSON.stringify()</code> will turn a JS object into a JSON string object and <code>JSON.parse()</code> turns the JSON string into a JavaScrpt object.
                 </p>
                 <img id="objects" src="JSONtoJS.png" />
                 <p>
                   Here is an example of a JSON object parsed into the JavaScript object which is then used with the HTML. Feel free to tinker with it a bit.
                   <script class="fiddle" async src="//jsfiddle.net/spiffiKay/bz8o1ymh/embed/js,html,result/"></script>
+                </p>
+              </div>
+
+              <div class="wells" id="lighter">
+                <h3>jQuery</h3>
+                <p>
+                  <a href="https://en.wikipedia.org/wiki/JQuery"
                 </p>
               </div>
 
