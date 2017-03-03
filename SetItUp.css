@@ -21,3 +21,9 @@ a.btn-lg{
   padding-left: 10%;
   padding-right: 10%;
 }
+
+#key{
+  display: block;
+  height: 40%;
+  width: 40%;
+}
