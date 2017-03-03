@@ -11,9 +11,9 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!-- Custom styles for this template -->
-    <link href="SiteBasics.css" rel="stylesheet">
+    <link href="Universal.css" rel="stylesheet">
     <link href="TheBasics2.css" rel="stylesheet">
-    <title>GET Method and JSON</title>
+    <title>GET Method, JSON, and jQuery</title>
   </head>
   <body>
     <div class="site-wrapper">
@@ -32,10 +32,10 @@
                     </button>
                     <ul class="dropdown-menu">
                       <li id="basic"><a href="#">What is an API?</a></li>
-                      <li id="basic2"><a href="#">GET methods and JSON</a></li>
+                      <li id="basic2"><a href="#">GET, JSON and jQuery</a></li>
                       <li id="setup"><a href="#">Set It Up</a></li>
-                      <li id="use1"><a href="#">Implementation 1</a></li>
-                      <li id="use2"><a href="#">Implementation 2</a></li>
+                      <li id="use1"><a href="#">Basic API Use</a></li>
+                      <li id="use2"><a href="#">Advanced API Use</a></li>
                     </ul>
                     </div>
                   </ul>
@@ -45,62 +45,107 @@
               <div class="site-heading">
                 <br />
                 <br />
-                <h1>GET method and JSON</h1>
+                <h1>GET method, JSON and jQuery</h1>
               </div>
 
               <div class="wells" id="lighter">
                 <h3>GET Method</h3>
                 <p>
-                  To access the Petfinder API we have to use GET requests, which sends the target information via the URL.
+                  To communicate with the Petfinder API we must use the GET method. GET requests send the information needed by the target, usually a server, in the URL
+                  by appending it to the end. Whether you know it or not, you have seen this many times. If you didn’t know what to look for it is very likely it just looked like random garbled code.
+                  Now it is important that you understand what this seemingly garbled code stands for because this is how you interact with the API.
+                   </p>
+                   <h4>The URL</h4>
+                   <p>
+                     URL stands for Uniform Resource Locater and it is the address of the resource you are requesting.
+                     The URL can be broken down into parts, each part getting more and more specific until it maps to exactly
+                     what you want. Similarly, if someone wants to send you a package, they need to know all the details that will
+                     route the package to your house. They need your home address, which is comprised of your country, state, city,
+                     street, house number, and possibly apartment number. If they are missing any part, aside from the country,
+                     it is very likely you won't get your package. The same goes for the URL. If you are missing any part of it, aside from the
+                     HTTP, you probably aren’t going to get where you are trying to go.
+
                 </p>
-                <h4>The URL</h4>
-                <p>
-                  URL stands for Uniform Resource Locater. It is the address of the resource you are requesting.
-                  The URL can be broken down into basic parts, and we will be building URLs to request information from the
-                  API, so it is important to understand each part. Much like your home address, which is comprised of your city,
-                  state, street, house number, and possibly apartment numbers, the URL is also comprised of various parts,
-                  which all together leads to your destination.
-                </p>
+                <h5>Let's take a look at the sample code from the Petfinder API documentation:</h5>
                 <p>
                 <code>http://api.petfinder.com/my.method?key=12345&arg1=foo&token=67890&sig=abcdef</code>
                 </p>
-                <p>
+                <div class="dropdown">
                   <ul class="rest">
                     <li>
-                    <code>http:</code> Hypertext Transfer Protocol: This is the request-response protocol between the client and server.
+                      <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#http">HTTP  <span class="caret"></span></button>
+                        <div id="http" class="collapse">
+                        <p class="list">
+                          <code>http:</code> (HyperText Transfer Protocol) This is the request-response protocol between the client and server.
+          	            </p>
+          	            <p class="list">
+                          When the internet was new, this always needed to be in front of the URL or else it wouldn't work. Now, it would be a safe bet that you
+                          never write it in front of a URL you are typing from memory, yet it still works. This is because it can be assumed that every URL is
+                          using HTTP, the same as a letter sent within the United States without writing USA will still get there. If you
+                          look at the rest of the address format, there are hints, such as the state it is going to, that imply its destination is in this country.
+                          URLs all follow a precise format which implies it is following correct protocol.
 
+          	             </p>
+                         <p class="list">
+                         Note: If you want to add a level of security <a href=” https://en.wikipedia.org/wiki/HTTPS> HTTPS </a> should still be included.
+                        </p>
+                      </div>
                     </li>
                     <li>
-                      <code>api.petfinder.com</code>  Domain name. This is pretty self explanatory.
+                      <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#domain">Domain Name  <span class="caret"></span></button>
+                        <div id="domain" class="collapse">
+                        <p class="list">
+                        <code>api.petfinder.com</code> At the level of understanding needed for this guide, this is pretty self explanatory.
+                        </p>
+                      </div>
                     </li>
                     <li>
-                      <code>my.method</code>  Path: Directs to a specific file or directory on the server.
+                      <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#path">Path  <span class="caret"></span></button>
+                      <div id="path" class="collapse">
+                        <p class="list">
+                          <code>my.method</code> Directions to the destination. The path starts with a single slash (never double), and any subsequent segments are separated slashes. The segments
+                          are usually in a specific hierarchical order like the file path on your OS. While the path may be empty (no extra information after the domain), it is always defined.
+                          Finding your way to the main page with nothing more than the domain name is considered following a path.
+                        </p>
+                      </div>
                     </li>
                     <li>
-                      <code>?key=12345&arg1=foo&token=67890&sig=abcdef</code> Query: represents the information
-                      being transferred to the server in a GET request. Each parameter is formatted as <code>name=info</code>
-                      with <code>&</code> between each set of values. For example <code>key=12345</code> is representative of your API key.
+                      <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#urlquery">Query  <span class="caret"></span></button>
+                      <div id="urlquery" class="collapse">
+                        <p class="list">
+                          <code>?key=12345&arg1=foo&token=67890&sig=abcdef</code> represents the information being transferred to the server in a GET
+                          request. Most parameters are formatted as <code>name=info</code> with & between each set of values.
+                        </p>
+                      </div>
                     </li>
                   </ul>
+              </div>
+                <p>
+                  Here is code for a basic GET form. You can't send a GET request from fiddle, but this at least gives you code to play with.
+                <script class="fiddle" async src="//jsfiddle.net/spiffiKay/thy8wunc/embed/html,result/"></script>
                 </p>
                 <p>
-                  Here is a fiddle with the code of a basic GET form. You can't send a GET call from fiddle, but this at least gives you code to play with.
-                  <script async src="//jsfiddle.net/spiffiKay/r315vL22/embed/html,result/"></script>
-                </p>
-                <p>
-                  This is the simple form this code creates:
+                  This is the simple form this code creates with the fields filled out and ready to send:
                   <img src="GETForm.png" />
-                  And the query line at the end of the URL:
+                  And this is the query line added to the end of the URL when this GET form is sent (remember, this is appended to the URL given in the code above):
                   <img id="query" src="queryline.png" />
-                  As you can see for the first field text_input=Send+me%21 (%21 for the !) and numerical_input=4321 with a & in between. This will be the
-                  case for any information sent in a GET request.
+                </p>
+                <h5>Let's break this query down:</h5>
+                <p>
+                  The white question mark signifies the beginning of the query. The label and input for the first field on the form are in pink.
+                  <code>text_input</code> is the label and <code>Send+me%21</code> (%21 is the !) is the input, and their relation to each other is signified with  <code>=</code>.
+                  The green ampersand links the two fields from the form together. There is generally an ampersand between each set of data sent.   The information for the second field is in blue.
+                </p>
+                <p>
+                  Hopefully this gives you a better understanding of what all the seemingly random code at the end of the URL means.
                 </p>
               </div>
+
               <div class="wells" id="white">
                 <h3>JSON</h3>
                 <p>
-                  <a href="http://www.json.org/">JSON</a> stands for JavaScript Object Notation. It is a data syntax. When requesting data from
-                  the API, all of the data must be in text form (JSON). Javascript objects can easily be changed into JSON, and vice versa, making
+                  <a id="tooBright" href="http://www.json.org/">JSON</a> stands for JavaScript Object Notation. It is a data syntax. When requesting data from
+                  the API, all of the data must be sent in text form (JSON). Javascript objects can easily be changed into JSON, and vice versa, making
                   sending and using data simple.
                 </p>
                 <p>
@@ -111,16 +156,16 @@
                 <p>
                   Here is an example of a JSON object parsed into the JavaScript object that is used on the HTML page. Feel free to tinker with it a bit.
                 </p>
-                <script async src="//jsfiddle.net/spiffiKay/bz8o1ymh/embed/js,html,result/"></script>
+                <script class="fiddle" async src="//jsfiddle.net/spiffiKay/bz8o1ymh/embed/js,html,result/"></script>
               </div>
 
               <div id="next">
-              <a href="#" id="nextPage" class="btn btn-lg btn-default">Set Up Your Access</a>
+              <a href="#" id="nextPage" class="btn btn-lg btn-default">Set Up Your Access  <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></a>
+              </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
     <script src="TheBasics2.js"></script>
     <script src="navbutton.js"></script>
     <!-- Bootstrap core JavaScript

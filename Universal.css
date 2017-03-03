@@ -1,0 +1,193 @@
+/*Base structure*/
+html,
+body {
+  height: 100%;
+  background-color: #FFFFFF;
+  color: #663399;
+}
+/*links*/
+a:link{
+  color: #FF7F50;
+}
+a:visited{
+  color: #FF7F50;
+}
+a:hover{
+  color: #5F9EA0;
+}
+
+h1{
+  padding-top: 12px;
+  padding-bottom: 2px;
+  margin-left: auto;
+  margin-right: auto;
+}
+h2,
+h3,
+h4,
+h5{
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 18%
+}
+
+p{
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 19%;
+  padding-right: 19%;
+}
+
+img {
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 40%;
+  width: 40%;
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
+
+#dark{
+  background-color: #663399;
+  color: #FFFFFF;
+}
+
+#med{
+  background-color: #9966cc;
+  color: #FFFFFF;
+}
+
+#light{
+  background-color: #b38cd9;
+  color: #FFFFFF;
+}
+
+#white{
+  background-color: #FFFFFF;
+  color: #663399;
+}
+a.btn-lg{
+  color: #663399;
+}
+.wells{
+  margin-left: -25%;
+  margin-right: -25%;
+  padding-top: 12px;
+  padding-bottom: 20px;
+}
+.rest{
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20%;
+  padding-right: 19%;
+
+}
+.list{
+  padding-left: 2%;
+  list-style-type: square;
+  color: #4682B4;
+}
+.fiddle{
+  display: block;
+  margin-left:auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+}
+.site-wrapper-inner {
+  display: table-cell;
+  /vertical-align: top;
+}
+
+.site-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Padding for spacing */
+.inner {
+  padding: 30px;
+}
+
+#navLogo{
+  display: inline-block;
+  float: left;
+  padding-right: 40%;
+  height: 60%;
+  width: 60%;
+}
+
+#api{
+  padding-top: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
+  float: left;
+}
+/* Custom default button */
+
+.btn-default,
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active {
+  color: #663399 !important;
+  background: rgba(0,0,0,0) !important;
+  border: solid 3px #663399 !important;
+}
+
+#next{
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+/* Header */
+.navigate-nav > li {
+  display: inline-block;
+}
+.navigate-nav > li + li {
+  margin-left: 20px;
+}
+
+.navigate-nav {
+  float: right;
+}
+
+/*site*/
+.site {
+  padding: 0 20px;
+}
+.site .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.site-heading{
+  padding-bottom: 20px;
+}
+/*Affix and center*/
+@media (min-width: 768px) {
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .navigate,
+  .mastfoot,
+  .site-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+@media (min-width: 992px) {
+  .navigate,
+  .mastfoot,
+  .site-container {
+    width: 1000px;
+  }
+}
