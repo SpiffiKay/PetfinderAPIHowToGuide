@@ -95,6 +95,17 @@ a.btn-lg{
   width: 50%;
 }
 
+code{
+  color: #6495ED;
+}
+
+.codeBlock{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  color: #6495ED;
+}
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
   display: table;

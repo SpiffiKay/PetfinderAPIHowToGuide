@@ -71,13 +71,11 @@
 
                 </p>
                 <h5>Let's take a look at the sample code from the Petfinder API documentation:</h5>
-                <p>
-                <code>http://api.petfinder.com/my.method?key=12345&arg1=foo&token=67890&sig=abcdef</code>
-                </p>
+                <img id="exUrl" src="exurl.png" />
                 <div class="dropdown">
                   <ul class="rest">
                     <li>
-                      <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#http">HTTP  <span class="caret"></span></button>
+                      <button id="a" type="button" class="btn btn-info" data-toggle="collapse" data-target="#http">HTTP  <span class="caret"></span></button>
                         <div id="http" class="collapse">
                         <p class="list">
                           <code>http:</code> (HyperText Transfer Protocol) This is the request-response protocol between the client and server.
@@ -96,7 +94,7 @@
                       </div>
                     </li>
                     <li>
-                      <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#domain">Domain Name  <span class="caret"></span></button>
+                      <button id="b" type="button" class="btn btn-info" data-toggle="collapse" data-target="#domain">Domain Name  <span class="caret"></span></button>
                         <div id="domain" class="collapse">
                         <p class="list">
                         <code>api.petfinder.com</code> At the level of understanding needed for this guide, this is pretty self explanatory.
@@ -104,7 +102,7 @@
                       </div>
                     </li>
                     <li>
-                      <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#path">Path  <span class="caret"></span></button>
+                      <button id="c" type="button" class="btn btn-info" data-toggle="collapse" data-target="#path">Path  <span class="caret"></span></button>
                       <div id="path" class="collapse">
                         <p class="list">
                           <code>my.method</code> Directions to the destination. The path starts with a single slash (never double), and any subsequent segments are separated slashes. The segments
@@ -114,7 +112,7 @@
                       </div>
                     </li>
                     <li>
-                      <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#urlquery">Query  <span class="caret"></span></button>
+                      <button id="d" type="button" class="btn btn-info" data-toggle="collapse" data-target="#urlquery">Query  <span class="caret"></span></button>
                       <div id="urlquery" class="collapse">
                         <p class="list">
                           <code>?key=12345&arg1=foo&token=67890&sig=abcdef</code> represents the information being transferred to the server in a GET
@@ -187,11 +185,19 @@
                   example above didn’t use JavaScript because there was no need to complicate the concept with syntax we won’t be working with.
                 </p>
                 <p>
-                  $.get() is an AJAX method. To put it simply, <a href=”https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started”>AJAX</a> is a way to communicate back and forth with the server,
-                  potentially updating parts of the page the user is interacting with without needing to update the entire page. We could go into a lot more detail about AJAX and its functionality,
-                  but for our purposes that is about all we need to know.
-                </p>
+                  <code> $.get() </code>is an <a href=”https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started”>AJAX</a> method. To put it simply, AJAX is a way to communicate back and forth with the server,
+                   potentially updating parts of the page with which the user is interacting without needing to update the entire page. We could go into a lot of detail about AJAX and its functionality,
+                   but for our purposes this is about all we need to know.
+                 </p>
+                 <p>
+                   This is the sample GET method from the Petfinder API documentation. As you can see, the URL is like the ones we looked at above. If you understand what information the query
+                   is sending to the server, you are ready to start using their API.
+                 </p>
+                 <p>
+                   The body of the method are examples of how to use the information, or alert the user if an error occurs. We will look at ways we can use the API information in the implementation section.
 
+                </p>
+                <img id="exGet" src="exget.png" />
               </div>
 
               <div id="next">

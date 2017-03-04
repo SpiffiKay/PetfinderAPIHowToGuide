@@ -23,6 +23,16 @@ a.btn-lg{
   width: 50%;
 }
 
+#exGet{
+  height: 50%;
+  width: 50%;
+}
+
+#exurl{
+  height: 50%;
+  width: 50%;
+}
+
 #lighter{
   background-color: #ccb3e6;
   color: #663399;
@@ -36,10 +46,26 @@ a.btn-lg{
 .btn-info:hover,
 .btn-info:focus,
 .btn-info:active{
-  color: #663399!important;
+  color: #663399;
   background: rgba(0,0,0,0) !important;
   border: none !important;
   box-shadow: none !important;
+}
+
+#a{
+  color: #ff0066 !important;
+}
+
+#b{
+  color: #3399ff !important;
+}
+
+#c{
+  color: #339933 !important;
+}
+
+#d{
+  color: #ff6600 !important;
 }
 
 .list{
