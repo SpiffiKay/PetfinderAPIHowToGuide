@@ -32,12 +32,11 @@ a.btn-lg{
   color: #FF7F50;
 }
 
-
 .btn-info,
 .btn-info:hover,
 .btn-info:focus,
 .btn-info:active{
-  color: #663399!important;
+  /*color: #663399!important;*/
   background: rgba(0,0,0,0) !important;
   border: none !important;
   box-shadow: none !important;

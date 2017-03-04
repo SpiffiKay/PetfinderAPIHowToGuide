@@ -6,13 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!-- Custom styles for this template -->
+    <script src="TheBasics2.js"></script>
+    <script src="navbutton.js"></script>
     <link href="Universal.css" rel="stylesheet">
     <link href="TheBasics2.css" rel="stylesheet">
+
     <title>GET Method, JSON, and jQuery</title>
   </head>
   <body>
@@ -164,8 +168,30 @@
               <div class="wells" id="lighter">
                 <h3>jQuery</h3>
                 <p>
-                  <a href="https://en.wikipedia.org/wiki/JQuery"
+                  jQuery is a JavaScript library, and it exists to make your life easier. It is used extensively all over the internet.
                 </p>
+                <p>
+                  jQuery is most likely used on the site of any company you can think of. It is extremely popular and all major browsers support it. If you already have a rudimentary understanding
+                  of HTML, CSS, and JavaScript, it is easy to learn and it cuts down on the amount of code you need to write. <a href=” https://www.w3schools.com/jquery/default.asp”>Here</a> is a
+                  great tutorial to get you started. There is a bunch of functionality jQuery can add to your site, but in this guide we are focusing mainly on the jQuery GET method.
+                </p>
+                <p>
+                  To use jQuery you can download and host the library yourself, or you can include a <a href=” http://www.webopedia.com/TERM/C/CDN.html”> CDN</a>  (Content Delivery Network) in your
+                  code from a site that hosts it. In this site and for the API we use the<a href=” https://developers.google.com/speed/libraries/”> Google CDN</a>. It should be placed in the header
+                  of the HTML file as demonstrated below.
+                </p>
+                <img src="jQueryCDN.png" />
+                <h4> jQuery $.get() Method and AJAX</h4>
+                <p>
+                  As you know, the GET method requests data from the server via a GET request. The jQuery $.get() method is no different, it just has different syntax than you may be used to. The
+                  example above didn’t use JavaScript because there was no need to complicate the concept with syntax we won’t be working with.
+                </p>
+                <p>
+                  $.get() is an AJAX method. To put it simply, <a href=”https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started”>AJAX</a> is a way to communicate back and forth with the server,
+                  potentially updating parts of the page the user is interacting with without needing to update the entire page. We could go into a lot more detail about AJAX and its functionality,
+                  but for our purposes that is about all we need to know.
+                </p>
+
               </div>
 
               <div id="next">
@@ -175,12 +201,10 @@
             </div>
           </div>
         </div>
-    <script src="TheBasics2.js"></script>
-    <script src="navbutton.js"></script>
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

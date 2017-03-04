@@ -1,5 +1,5 @@
-var saveAn = document.getElementById("SaveAnimals");
-
-saveAn.addEventListener("click", function(event){
-  window.location.href = "https://spiffikay.github.io/TheBasics.html";
+$(document).ready(function(){
+  $("#SaveAnimals").click(function(){
+    window.location.href= "https://spiffikay.github.io/TheBasics.html";
+  });
 });

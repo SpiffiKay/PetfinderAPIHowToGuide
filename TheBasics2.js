@@ -1,5 +1,5 @@
-var nextPage = document.getElementById("nextPage");
-
-nextPage.addEventListener("click", function(event){
-    window.location.href = "https://spiffikay.github.io/SetItUp.html"
+  $(document).ready(function(){
+    $("#nextPage").click(function(){
+      window.location.href= "https://spiffikay.github.io/SetItUp.html";
+    });
   });

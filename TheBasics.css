@@ -16,6 +16,13 @@
   color: #663399;
 }
 
+#note{
+  color: #5F9EA0;
+  font-size: 90%;
+  padding-bottom: 15px;
+  padding-left: 0%;
+}
+
 .btn-info,
 .btn-info:hover,
 .btn-info:focus,

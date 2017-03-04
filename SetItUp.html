@@ -7,13 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <!-- Latest compiled and minified CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!-- Custom styles for this template -->
     <link href="Universal.css" rel="stylesheet">
     <link href="SetItUp.css" rel="stylesheet">
-    <title>Set Up Your API</title>
+    <script src="navbutton.js"></script>
+    <script src="SetItUp.js"></script>
+
+    <title>Set Up Your API Credentials</title>
   </head>
   <body>
     <div class="site-wrapper">
@@ -46,7 +50,7 @@
                 <img id="auth" src="auth.png"/>
                 <br />
                 <br />
-                <h1>Set Up Your API</h1>
+                <h1>Set Up Your API Credentials</h1>
               </div>
 
 
@@ -57,11 +61,12 @@
                   If you haven't already, you need to sign up for a Petfinder account on their main site <a href="https://www.petfinder.com/user/register?next=https://www.petfinder.com/developers/api-key">here.</a>
                   Once you have an account, you will access everything for the API from the <a href="https://www.petfinder.com/developers/api-key">developer page</a> as seen below.
                 </p>
-                  <img src="devLogin.jpg"/>
-                  <p>
+                <img src="devLogin.jpg"/>
+                <h3>Your API Key</h3>  
+                <p>
                   Once you log in, you must apply for your API key. This is how Petfinder tracks the identity of users accessing their database as well as the frequency they do so. There is an option to provide your site's address,
-                   and I recommend that you do as it allows Petfinder to add a level of security. If anyone else tries to fraudulently use your key from a different site, they can track where the call came from,
-                   and take measures to protect both you and their database.
+                 and I recommend that you do as it allows Petfinder to add a level of security. If anyone else tries to fraudulently use your key from a different site, they can track where the call came from,
+                 and take measures to protect both you and their database.
                  </p>
                  <img src="GetAPIKey.jpg" />
                  <p>
@@ -86,13 +91,9 @@
           </div>
         </div>
       </div>
-
-    <script src="navbutton.js"></script>
-    <script src="SetItUp.js"></script>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
