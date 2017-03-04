@@ -1,0 +1,76 @@
+/*links*/
+a:link{
+  color: #7FFF00;
+}
+a:visited{
+  color: #7FFF00;
+}
+a:hover{
+  color: #5F9EA0;
+}
+
+a.btn-lg{
+  color: #663399;
+}
+
+#a{
+  color: #7FFFD4;
+}
+
+#b{
+  color: #ff99ff;
+}
+
+#c{
+  color: #00cc00;
+}
+
+#d{
+  color: #ffcc66;
+}
+
+#e{
+  color: #ff6600;
+}
+
+#med{
+  background-color: #9966cc;
+  color: #FFFFFF;
+}
+
+.list{
+  color: 	#B0E0E6;
+}
+
+#exurl{
+  height: 60%;
+  width: 60%;
+
+}
+
+#samp{
+  height: 60%;
+  width: 60%;
+  padding-right: 30%;
+}
+
+#console{
+  height: 100%;
+  width: 100%;
+  padding-right: 20%;
+}
+
+#exget{
+  height: 70%;
+  width:  70%;
+}
+
+.btn-info,
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active{
+  color: #663399;
+  background: rgba(0,0,0,0) !important;
+  border: none !important;
+  box-shadow: none !important;
+}

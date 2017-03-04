@@ -13,10 +13,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!-- Custom styles for this template -->
     <link href="Universal.css" rel="stylesheet">
+    <link href="PutItToUse.css" rel="stylesheet">
     <script src="PutItToUse.js"></script>
     <script src="navbutton.js"></script>
 
-    <title>Basic API Use</title>
+    <title>Utilizing the API (Basic)</title>
   </head>
   <body>
     <div class="site-wrapper">
@@ -37,8 +38,8 @@
                       <li id="basic"><a href="#">What is an API?</a></li>
                     <li id="basic2"><a href="#">GET, JSON and jQuery</a></li>
                     <li id="setup"><a href="#">Set It Up</a></li>
-                    <li id="use1"><a href="#">Basic API Use</a></li>
-                    <li id="use2"><a href="#">Advanced API Use</a></li>
+                    <li id="use1"><a href="#">Utilizing the API (Basic)</a></li>
+                    <li id="use2"><a href="#">Utilizing the API (Advanced)</a></li>
                     </ul>
                     </div>
                   </ul>
@@ -48,20 +49,119 @@
               <div class="site-heading">
                 <br />
                 <br />
-                <h1>Basic API Use/h1>
+                <h1>Utilizing the API (Basic)</h1>
               </div>
 
               <div class="wells" id="med">
-                <h3>API Requests</h3>
-                <h4>GET method</h4>
+                <h3>Building the URL</h3>
                 <p>
-                  To access the Petfinder API we have to use the GET method, which is a standard HTTP request method.
+                  The <a href="https://www.petfinder.com/developers/api-docs">API documentation page</a> lays out all the information needed
+                  in your GET call. They are listed by the paths you need for various types of information. Under each path there is a table
+                  of the arguments that are needed for a successful GET call. We will walk through one of the simpler ones to get us started.
                 </p>
+                <p>
+                  Note that some are marked required while others are optional and can be omitted. This allows us to ignore the token parameter for now.
+                  We will learn about tokens on the next page.
+                </p>
+                <p>
+                  The parameters:
+                </p>
+                <img src="exCallParams.png" />
+                <p>
+                  Remember the example URL:
+                </p>
+                <img id="exurl" src="exurl.png"/>
+                <div class="dropdown">
+                  <ul class="rest">
+                    <li><button id="a" type="button" class="btn btn-info" data-toggle="collapse" data-target="#path">Path  <span class="caret"></span></button>
+                      <div id="path" class="collapse">
+                        <p class="list">
+                          The first thing you will see in the set of parameters is the path. This should be the first thing you append to your URL.
+                        </p>
+                        <div>
+                          <span class="glyphicon glyphicon-pencil" aria-hidden="true">  <code>http://api.petfinder.com/breed.list</code>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <p>
+                    Everything after this should be sent in the query, and can be listed in any order as long as the syntax is followed. I like to keep things a logical
+                    order, making everything more legible and understandable later on.
+                  </p>
+                  <ul class="rest">
+                    <li>
+                      <button id="d" type="button" class="btn btn-info" data-toggle="collapse" data-target="#format">Format  <span class="caret"></span></button>
+                        <div id="format" class="collapse">
+                        <p class="list">
+                          The Petfinder API can communicate with us via XML or JSON. XML is their default, but we are using JSON so we need to indicate this in our call.
+                          This is pretty easy.
+                        </p>
+                        <p class="list">
+                          Remember, this is the first parameter of the query so we need to put a <code>?</code> in front of it. All parameters after the first need to be separated by <code>?</code>.
+                        </p>
+                        <div>
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true">  <code>http://api.petfinder.com/breed.list/?format=JSON</code>
+                        </div>
+                      </div>
+                    </li>
+                    <li><button id="c" type="button" class="btn btn-info" data-toggle="collapse" data-target="#data">Data  <span class="caret"></span></button>
+                        <div id="data" class="collapse">
+                        <p class="list">
+                          Next is the data the server needs to in the query in order to give the correct response. This is the information you will get from the user. For now,
+                          we will say the user wanted to know all the breeds of dogs.
+                        </p>
+                        <img id="samp" src="sampleget.png" />
+                        <div>
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true">  <code>http://api.petfinder.com/breed.list/?format=JSON&animal=dog</code>
+                        </div>
+                      </div>
+                    </li>
+                    <li><button id="b" type="button" class="btn btn-info" data-toggle="collapse" data-target="#key">Key  <span class="caret"></span></button>
+                      <div id="key" class="collapse">
+                        <p class="list">
+                          Once all the data is appended it is time to add your key, which gains you access to the server. I like putting it at the end because it is
+                          a set of random characters, and when put in the middle it can make the query difficult to read. Now that everything is appended to the URL
+                          we can now send it to the server.
+                        </p>
+                        <div>
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true">  <code>http://api.petfinder.com/breed.list/?format=JSON&animal=dog&key=7f275b00b7e879ab40ec03ca8ab5c95a </code>
+                        </div>
+                      </div>
+                    </li>
+                      <li><button id="e" type="button" class="btn btn-info" data-toggle="collapse" data-target="#response">Response  <span class="caret"></span></button>
+                        <div id="response" class="collapse">
+                        <p class="list">
+                          If everything goes as expected the server will send a response of data that you can use in your app.
+                          You can put the response variable provided in the documentation, in this case <code>petfinderBreedList</code>, in
+                          <code>console.log()</code> to the API's response in the console. If you open your browser's developer tools (usually <code>F12</code>) you should see something like this in
+                          your console. I have put boxes around the information that we will want to start working with.
+                        </p>
+                        <img id="console" src="response1.png" />
+                        <p class="list">
+                          Once you are successfully interacting with the API you can start developing your app around it.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
 
+              <div class="wells" id="white">
+                <h3>Communicating with the API</h3>
+                <p>
+                  To get the response above, the URL was sent to the server via this jQuery GET method:
+                </p>
+                <img id="exget" src="get.png" />
+                <p>
+                  This GET method successfully communicated with the server resulting in a response, but there are a couple problems. First, this is a static call. It involves no meaningful interaction with the
+                  user. The other problem is nothing is done with the information aside from logging it in the console. We are now ready to build a more robust app around
+                  the API fixing these problems.
+                </p>
+                <h4>Dynamically Interacting with the User</h4>
               </div>
 
               <div id="next">
-              <a href="#" id="nextPage" class="btn btn-lg btn-default">A Little More Advanced  </a>
+              <a href="#" id="nextPage" class="btn btn-lg btn-default">Let's Try A Little More Advanced  <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></a>
               </div>
             </div>
           </div>

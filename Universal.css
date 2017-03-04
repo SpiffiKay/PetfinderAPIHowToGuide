@@ -53,11 +53,6 @@ img {
   color: #FFFFFF;
 }
 
-#med{
-  background-color: #9966cc;
-  color: #FFFFFF;
-}
-
 #white{
   background-color: #FFFFFF;
   color: #663399;
@@ -92,6 +87,10 @@ a.btn-lg{
   margin-left:auto;
   margin-right: auto;
   width: 50%;
+}
+
+.glyphicon-pencil{
+  color: #F4A460;
 }
 
 code{
