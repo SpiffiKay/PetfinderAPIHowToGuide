@@ -49,7 +49,7 @@
               <div class="site-heading">
                 <br />
                 <br />
-                <h1>GET method, JSON and jQuery</h1>
+                <h1>GET Method, JSON, and jQuery</h1>
               </div>
 
               <div class="wells" id="lighter">
@@ -57,7 +57,7 @@
                 <p>
                   To communicate with the Petfinder API we must use the GET method. GET requests send the information needed by the target, usually a server, in the URL
                   by appending it to the end. Whether you know it or not, you have seen this many times. If you didn’t know what to look for it is very likely it just looked like random garbled code.
-                  Now it is important that you understand what this seemingly garbled code stands for because this is how you interact with the API.
+                  It is important that you understand what this seemingly garbled code stands for because this is how you interact with the API.
                    </p>
                    <h4>The URL</h4>
                    <p>
@@ -70,7 +70,9 @@
                      HTTP, you probably aren’t going to get where you are trying to go.
 
                 </p>
-                <h5>Let's take a look at the sample code from the Petfinder API documentation:</h5>
+                <p>
+                  Let's take a look at the sample code from the Petfinder API documentation:
+                </p>
                 <img id="exUrl" src="exurl.png" />
                 <div class="dropdown">
                   <ul class="rest">
@@ -83,13 +85,13 @@
           	            <p class="list">
                           When the internet was new, this always needed to be in front of the URL or else it wouldn't work. Now, it would be a safe bet that you
                           never write it in front of a URL you are typing from memory, yet it still works. This is because it can be assumed that every URL is
-                          using HTTP, the same as a letter sent within the United States without writing USA will still get there. If you
+                          using HTTP, the same way a letter sent within the United States will still get there without USA written on it. If you
                           look at the rest of the address format, there are hints, such as the state it is going to, that imply its destination is in this country.
                           URLs all follow a precise format which implies it is following correct protocol.
 
           	             </p>
                          <p class="list">
-                         Note: If you want to add a level of security <a href=” https://en.wikipedia.org/wiki/HTTPS> HTTPS </a> should still be included.
+                         Note: If you want to add a level of security <a href="https://en.wikipedia.org/wiki/HTTPS"> HTTPS </a> should still be included.
                         </p>
                       </div>
                     </li>
@@ -97,7 +99,7 @@
                       <button id="b" type="button" class="btn btn-info" data-toggle="collapse" data-target="#domain">Domain Name  <span class="caret"></span></button>
                         <div id="domain" class="collapse">
                         <p class="list">
-                        <code>api.petfinder.com</code> At the level of understanding needed for this guide, this is pretty self explanatory.
+                        <code>api.petfinder.com</code> This is pretty self explanatory.
                         </p>
                       </div>
                     </li>
@@ -105,7 +107,7 @@
                       <button id="c" type="button" class="btn btn-info" data-toggle="collapse" data-target="#path">Path  <span class="caret"></span></button>
                       <div id="path" class="collapse">
                         <p class="list">
-                          <code>my.method</code> Directions to the destination. The path starts with a single slash (never double), and any subsequent segments are separated slashes. The segments
+                          <code>my.method</code> Directions to the destination. The path starts with a single slash (never double), and any subsequent segments are separated with slashes. The segments
                           are usually in a specific hierarchical order like the file path on your OS. While the path may be empty (no extra information after the domain), it is always defined.
                           Finding your way to the main page with nothing more than the domain name is considered following a path.
                         </p>
@@ -116,7 +118,7 @@
                       <div id="urlquery" class="collapse">
                         <p class="list">
                           <code>?key=12345&arg1=foo&token=67890&sig=abcdef</code> represents the information being transferred to the server in a GET
-                          request. Most parameters are formatted as <code>name=info</code> with & between each set of values.
+                          request. Most parameters are formatted as <code>name=info</code> with <code>&</code> between each set of values.
                         </p>
                       </div>
                     </li>
@@ -129,18 +131,17 @@
                 <p>
                   This is the simple form this code creates with the fields filled out and ready to send:
                   <img src="GETForm.png" />
-                  And this is the query line added to the end of the URL when this GET form is sent (remember, this is appended to the URL given in the code above):
+                  And this is the query line appended to the end of the URL when the GET form above is sent:
                   <img id="query" src="queryline.png" />
                 </p>
-                <h5>Let's break this query down:</h5>
                 <p>
-                  The white question mark signifies the beginning of the query. The label and input for the first field on the form are in pink.
-                  <code>text_input</code> is the label and <code>Send+me%21</code> (%21 is the !) is the input, and their relation to each other is signified with  <code>=</code>.
-                  The green ampersand <code>&</code>links the two fields from the form together. There is generally an ampersand between each set of data sent.
-                   The information for the second field <code>numerical_input=4321</code> is in blue.
+                  Let's break this query down:
                 </p>
                 <p>
-                  Hopefully this gives you a better understanding of what all the seemingly random code at the end of the URL means.
+                  The white question mark signifies the beginning of the query. The label and input for the first field on the form are in pink.
+                  <code>text_input</code> is the label and <code>Send+me%21</code> (%21 is the !) is the input. Their relation to each other is signified with  <code>=</code>.
+                  The green ampersand <code>&</code> links the two fields from the form together. There is generally an ampersand between each set of data.
+                   The information for the second field <code>numerical_input=4321</code> is in blue.
                 </p>
               </div>
 
@@ -148,8 +149,8 @@
                 <h3>JSON</h3>
                 <p>
                   <a id="tooBright" href="http://www.json.org/">JSON</a> stands for JavaScript Object Notation. It is a data syntax. When requesting data from
-                  the API, all the data must be sent in text form. Communications with this API can be in XML or JSON format. XML is a little dated and JSON is
-                  more widely used now, so we will be sticking with JSON. Javascript objects can easily be changed into JSON, and vice versa, making
+                  the API, all the data must be sent in text form. Communications with the Petfinder API can be in XML or JSON format. XML is a little dated and JSON is
+                  more widely used now, so that is what we will be using. Javascript objects can easily be changed into JSON and vice versa, making
                   sending and using data simple.
                 </p>
                 <p>
@@ -169,13 +170,13 @@
                   jQuery is a JavaScript library, and it exists to make your life easier. It is used extensively all over the internet.
                 </p>
                 <p>
-                  jQuery is most likely used on the site of any company you can think of. It is extremely popular and all major browsers support it. If you already have a rudimentary understanding
-                  of HTML, CSS, and JavaScript, it is easy to learn and it cuts down on the amount of code you need to write. <a href=” https://www.w3schools.com/jquery/default.asp”>Here</a> is a
+                  jQuery is most likely being used on the site of any major company you can think of, is extremely popular and all major browsers support it. If you already have a rudimentary understanding
+                  of HTML, CSS, and JavaScript it is easy to learn and it cuts down on the amount of code you need to write. <a href="https://www.w3schools.com/jquery/default.asp">This</a> is a
                   great tutorial to get you started. There is a bunch of functionality jQuery can add to your site, but in this guide we are focusing mainly on the jQuery GET method.
                 </p>
                 <p>
-                  To use jQuery you can download and host the library yourself, or you can include a <a href=” http://www.webopedia.com/TERM/C/CDN.html”> CDN</a>  (Content Delivery Network) in your
-                  code from a site that hosts it. In this site and for the API we use the<a href=” https://developers.google.com/speed/libraries/”> Google CDN</a>. It should be placed in the header
+                  To use jQuery you can download and host the library yourself, or you can include a <a href="http://www.webopedia.com/TERM/C/CDN.html">CDN</a> (Content Delivery Network) in your
+                  code from a site that hosts it. In this site and for the API we will use the <a href="https://developers.google.com/speed/libraries/"> Google CDN</a>. It should be placed in the header
                   of the HTML file as demonstrated below.
                 </p>
                 <img src="jQueryCDN.png" />
@@ -185,19 +186,19 @@
                   example above didn’t use JavaScript because there was no need to complicate the concept with syntax we won’t be working with.
                 </p>
                 <p>
-                  <code> $.get() </code>is an <a href=”https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started”>AJAX</a> method. To put it simply, AJAX is a way to communicate back and forth with the server,
-                   potentially updating parts of the page with which the user is interacting without needing to update the entire page. We could go into a lot of detail about AJAX and its functionality,
-                   but for our purposes this is about all we need to know.
+                  <code> $.get()</code> is an <a href="https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started">AJAX</a> method. To put it simply, AJAX is a way to communicate back and forth with the server.
+                   What makes it unique and beneficial is that i can potentially update parts of the page with which the user is interacting without needing to update the entire page. We could go into a lot of
+                   detail about AJAX and its functionality, but for our purposes this is about all we need to know.
                  </p>
                  <p>
-                   This is the sample GET method from the Petfinder API documentation. As you can see, the URL is like the ones we looked at above. If you understand what information the query
-                   is sending to the server, you are ready to start using their API.
+                   This is the sample GET method from the Petfinder API documentation:
                  </p>
+                 <img id="exGet" src="exget.png" />
                  <p>
-                   The body of the method are examples of how to use the information, or alert the user if an error occurs. We will look at ways we can use the API information in the implementation section.
-
+                   The body of the method is an example of a way to use the information if the call is successful, or alert the user if an error occurs. We will look at the ways we can use the API
+                   information in the implementation section. As you can see, the URL is similar to what we looked at above. If you understand what information the query is sending to the server
+                    you are ready to start using their API.
                 </p>
-                <img id="exGet" src="exget.png" />
               </div>
 
               <div id="next">

@@ -52,7 +52,7 @@
                 <h1>What is an API?</h1>
                 <p id="note">
                   NOTE: The first couple of pages give a brief overview of the concepts needed in order to properly use the API. If you are
-                  already comfortable with these concepts feel free to skip these pages by using the menu in the top right corner.
+                  already comfortable with these concepts feel free to skip these pages.
                 </p>
               </div>
 
@@ -66,16 +66,16 @@
                     or owns, while abstracting the underlying implementation. Each API has clearly defined protocols and tools to shape how you interact with and access
                     their data. Developers can build an application around one or more APIs making the development process much easier and more efficient.
                   </p>
-                <h4>Web API</h4>
+                <h4>Web APIs</h4>
                   <p>
                     Developers usually interact with <a href="https://developer.mozilla.org/en-US/docs/WebAPI">web APIs</a> via sending HTTP requests, then receiving a response of data in
-                    in <a href="https://www.w3schools.com/xml/xml_whatis.asp">XML</a> or <a href="https://www.w3schools.com/js/js_json_intro.asp">JSON</a> format. The developer
-                    then uses this data in their own applications, often allowing the data to reach new and different users than would have otherwise been reached.
+                    <a href="https://www.w3schools.com/xml/xml_whatis.asp">XML</a> or <a href="https://www.w3schools.com/js/js_json_intro.asp">JSON</a> format. The developer
+                    then uses this data in their own applications, often resulting in the data reaching new and different users than would have otherwise been reached.
                   </p>
                   <p>
-                    The Petfinder API gives access to their expansive database, as well as many options for gathering and using the information, but we will get into specifics in a little bit.
+                    The Petfinder API gives access to their expansive database, as well as many options for gathering and using the information. We will get into the specifics of this in a little bit.
                   </p>
-                  <h4>RESTful API</h4>
+                  <h4>RESTful APIs</h4>
                   <p>
                     The Petfinder API is a <a href="http://searchcloudstorage.techtarget.com/definition/RESTful-API">RESTful API</a>.
                     The structure of a RESTful API is based on the <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>
@@ -86,9 +86,9 @@
                     <li><button type="button" class="btn btn-info" data-toggle="collapse" data-target="#client">Client-Server  <span class="caret"></span></button>
                       <div id="client" class="collapse">
                       <p class="list">
-                        Keeping the user interface concerns and storage concerns completely separate allows both to be altered and scaled
-                        independently of each other. This means your interface is not affected if the database you are accessing changes, and vice versa.
-                        Both you and the host are free to change different aspects on your respective end without worrying about “breaking” the other parts.
+                        The client interface and server interface and storage are completely separate allowing both to be altered and scaled
+                        independently of each other. This means both you and the host are free to change different aspects on your respective ends without worrying
+                        about “breaking” the other end.
                       </p>
                     </div>
                     </li>
@@ -110,7 +110,7 @@
                     <div id="cache" class="collapse">
                       <p class="list">
                         Both clients and intermediary servers can cache responses. Clients must define their responses as either cacheable or not. If a response
-                        has time sensitive data, if it were cached, the information may become stale. Being able to flag whether the response is cacheable or not
+                        has time sensitive data and is cached, the information may become stale. Being able to flag whether the response is cacheable or not
                         can eliminate excess client-server interactions improving overall performance.
                       </p>
                     </div>
@@ -134,16 +134,16 @@
                   <li><button type="button" class="btn btn-info" data-toggle="collapse" data-target="#uniform">Uniform Interface  <span class="caret"></span></button>
                     <div id="uniform" class="collapse">
                       <p class="list">
-                        The REST system design is reliant on the idea of individual functionality of each part of the whole. This is the base of the RESTful concept,
-                        and can only be achieved if every aspect of the interface is uniform. Because each part does not rely on the other parts, they can change without
-                        affecting them. We could go into great detail as to how this is implemented, but this is a little outside the scope of this guide.
+                        The REST system design is reliant on the idea of individual functionality of each part of the whole. This can only be achieved if every aspect of
+                        the interface is uniform. Because each part is capable of being autonomous, they can change without
+                        affecting the other parts. We could go into great detail as to how this is implemented, but this is a little outside the scope of this guide.
                       </p>
                     </div>
                   </li>
                 </ul>
               </div>
               <p>
-                The most common way to use RESTful APIs is to use HTTP protocol. Using GET, POST, PUT, and DELETE methods. The Petfinder API currently only
+                The most common way to use RESTful APIs is to use HTTP protocol using GET, POST, PUT, and DELETE methods. The Petfinder API currently only
                 uses the GET method, so that is where our focus will lie.
               </p>
             </div>

@@ -71,6 +71,19 @@ p{
   float: right;
 }
 
+.dropdown-menu{
+  background-color: #e6d9f2;
+}
+
+#basic,
+#basic2,
+#setup,
+#use1,
+#use2{
+    color: #663399;
+}
+
+
 /*site*/
 .site {
   padding: 0 20px;
@@ -94,6 +107,11 @@ p{
     position: fixed;
     top: 0;
   }
+
+  .dropdown-menu{
+    background-color: #e6d9f2;
+  }
+
 
   .mastfoot {
     position: fixed;

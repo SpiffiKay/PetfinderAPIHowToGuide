@@ -13,6 +13,11 @@ a.btn-lg{
   color: #663399;
 }
 
+#light{
+  background-color: #b38cd9;
+  color: #FFFFFF;
+}
+
 #auth{
   display: block;
   float: right;

@@ -58,36 +58,35 @@ img {
   color: #FFFFFF;
 }
 
-#light{
-  background-color: #b38cd9;
-  color: #FFFFFF;
-}
-
 #white{
   background-color: #FFFFFF;
   color: #663399;
 }
+
 a.btn-lg{
   color: #663399;
 }
+
 .wells{
   margin-left: -25%;
   margin-right: -25%;
   padding-top: 12px;
   padding-bottom: 20px;
 }
+
 .rest{
   margin-left: auto;
   margin-right: auto;
   padding-left: 20%;
   padding-right: 19%;
-
 }
+
 .list{
   padding-left: 2%;
   list-style-type: square;
   color: #4682B4;
 }
+
 .fiddle{
   display: block;
   margin-left:auto;
@@ -168,6 +167,10 @@ code{
 
 .navigate-nav {
   float: right;
+}
+
+.dropdown-menu{
+  background-color: #e6d9f2;
 }
 
 /*site*/

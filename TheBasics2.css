@@ -50,6 +50,7 @@ a.btn-lg{
   background: rgba(0,0,0,0) !important;
   border: none !important;
   box-shadow: none !important;
+  text-shadow: none;
 }
 
 #a{
