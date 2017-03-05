@@ -6,12 +6,12 @@ body {
   color: #663399;
 }
 /*links*/
-a:link{
+a:link,
+a:visited
+{
   color: #FF7F50;
 }
-a:visited{
-  color: #FF7F50;
-}
+
 a:hover{
   color: #5F9EA0;
 }

@@ -17,7 +17,7 @@
     <script src="PutItToUse.js"></script>
     <script src="navbutton.js"></script>
 
-    <title>Utilizing the API (Basic)</title>
+    <title>Utilizing the API</title>
   </head>
   <body>
     <div class="site-wrapper">
@@ -39,6 +39,7 @@
                     <li id="basic2"><a href="#">GET, JSON and jQuery</a></li>
                     <li id="setup"><a href="#">Set It Up</a></li>
                     <li id="use1"><a href="#">Utilizing the API </a></li>
+                    <li id="use2"><a href="#">Example Page </a></li>
                     </ul>
                     </div>
                   </ul>
@@ -48,19 +49,23 @@
               <div class="site-heading">
                 <br />
                 <br />
-                <h1>Utilizing the API (Basic)</h1>
+                <h1>Utilizing the API</h1>
               </div>
 
               <div class="wells" id="med">
                 <h3>Building the URL</h3>
                 <p>
                   The <a href="https://www.petfinder.com/developers/api-docs">API documentation page</a> lays out all the information needed
-                  in your GET call. They are listed by the paths you need for various types of information. Under each path there is a table
-                  of the arguments that are needed for a successful GET call. We will walk through one of the simpler ones to get us started.
+                  in your getJSON call. They are listed by the paths you need for various types of information. Under each path there is a table
+                  of the arguments that are needed for a successful getJSON call. We will walk through one of the simpler calls to get us started.
                 </p>
                 <p>
-                  Note that some are marked required while others are optional and can be omitted. This allows us to ignore the token parameter for now.
-                  We will learn about tokens on the next page.
+                  Note that some are marked required, while others are optional and can be omitted. This brings us to the token argument, which is
+                  a purely optional argument, whose sole purpose is to make sure your data does not get stale. If the user calls for
+                  information, then spends an hour making a sandwich (hey, cooking is hard), the page will have timed out if you use a token. This is
+                  to make sure only animals that are still available are accessible. However, I'm positive most people searching for pets are aware that
+                  pets go on a first-come-first-go basis, and understand that if they take a nap before adopting the animal they chose, they may not get it.
+                  Again, the whole JSONP/getJSON dynamic makes this concept confusing enough, and we don't need superflourous terms getting in the way.
                 </p>
                 <p>
                   The parameters:
@@ -84,7 +89,7 @@
                     </li>
                   </ul>
                   <p>
-                    Everything after this should be sent in the query, and can be listed in any order as long as the syntax is followed. I like to keep things a logical
+                    Everything after this should be sent in the query, and can be listed in any order as long as the syntax is followed. I like to keep things in a logical
                     order, making everything more legible and understandable later on.
                   </p>
                   <ul class="rest">
@@ -96,7 +101,7 @@
                           This is pretty easy.
                         </p>
                         <p class="list">
-                          Remember, this is the first parameter of the query so we need to put a <code>?</code> in front of it. All parameters after the first need to be separated by <code>?</code>.
+                          Remember, this is the first parameter of the query so we need to put a <code>?</code> in front of it. All parameters after the first need to be separated by <code>&</code>.
                         </p>
                         <div>
                             <span class="glyphicon glyphicon-pencil" aria-hidden="true">  <code>http://api.petfinder.com/breed.list/?format=JSON</code>
@@ -119,11 +124,14 @@
                       <div id="key" class="collapse">
                         <p class="list">
                           Once all the data is appended it is time to add your key, which gains you access to the server. I like putting it at the end because it is
-                          a set of random characters, and when put in the middle it can make the query difficult to read. Now that everything is appended to the URL
-                          we can now send it to the server.
+                          a set of random characters, and when put in the middle it can make the query difficult to read. Also remember, because the API communicates with
+                          JSONP <code>callback=?</code> has to be at the very end. This is very, very important. It cannot go anywhere else.
+                        </p>
+                        <p>
+                          Now that everything is appended to the URL we can now send it to the server.
                         </p>
                         <div>
-                            <span class="glyphicon glyphicon-pencil" aria-hidden="true">  <code>http://api.petfinder.com/breed.list/?format=JSON&animal=dog&key=7f275b00b7e879ab40ec03ca8ab5c95a </code>
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true">  <code>http://api.petfinder.com/breed.list/?format=JSON&animal=dog&key=7f275b00b7e879ab40ec03ca8ab5c95a&callback=? </code>
                         </div>
                       </div>
                     </li>
@@ -133,6 +141,9 @@
                           If everything goes as expected the server will send a response of data that you can use in your app.
                           If you open your browser's developer tools (usually <code>F12</code>) you should see something like this in
                           your console. I have put boxes around the information that we will want to start working with.
+                        </p>
+                        <p>
+                          You can completely disregard the XML resturn type at the bottom.
                         </p>
                         <img id="console" src="response1.png" />
                         <p class="list">
@@ -156,31 +167,30 @@
               <div class="wells" id="white">
                 <h3>Communicating with the API</h3>
                 <p>
-                  To get the response above, the URL was sent to the server via this jQuery GET method:
+                  To get the response above, the URL was sent to the server via this jQuery getJSON method:
                 </p>
                 <img id="exget" src="get.png" />
                 <p>
-                  This GET method successfully communicated with the server resulting in a response, but there are a couple problems. First, this is a static call. It involves no meaningful interaction with the
-                  user. The other problem is nothing is done with the information aside from logging it in the console. We are now ready to build a more robust app around
+                  This getJSON method successfully communicated with the server resulting in a response, but there are a couple problems. First, this is a static call--it involves no meaningful interaction with the
+                  user. The other problem is nothing is done with the information aside from logging it in the console. Luckily, we are now ready to build a more robust app around
                   the API fixing these problems.
                 </p>
                 <h4>Dynamically Interacting with the User</h4>
                 <p>
-                  It is time to put all your new shiny knowledge into action. We need to make a form so the user can tell us what they need, and a way
-                  to get this information into the URL query to send to the server. To do this, we will use a jQuery method to turn all the data into a nice query-ready string
-                  (I told you jQuery is here to make your life easier), then put that in a JavaScript variable. We will then append that variable, along with any pieces of data we want to include outside of user content, and the key.
+                  It is time to put all your new shiny knowledge into action. We need to make a form so the user can tell us what they need. We also need a way
+                  to get this information into the URL query to send to the server. To do this, we will use a jQuery method to turn all the user data into a nice query-ready string
+                  (I told you jQuery is here to make your life easier), then put that in a JavaScript variable. We will then append that variable, along with any pieces of data we want
+                  to include outside of user content, the key, and the callback.
                 </p>
                 <h4>Data Not Included on the User Form</h4>
                 <p>
                   The Petfinder API gives you a lot of room to customize the response you are going to get from them. This helps the user of your app find precisely what they are looking for.
-                  However, you probably don't want them to be in charge of all of these options. In the parameter list below there are options like and output, format (as previously discussed) and the key.
-                   If the user could have control over certain arguments they could potentially break, or at the very least, slow down your app. Also, because the Petfinder API uses the $.getJSON method over
-                   the regular GET call, you need to add <code>callaback=?</code> to the end of your URL. It cannot go anywhere else. I will append it directly on the key because I always put the key as close to the
-                   end as possible for legibility.
+                  However, you probably don't want them to be in charge of all of these options. In the parameter list below there are options such as output and format, which we have already discussed.
+                   If the user could have control over certain arguments they could potentially break, or at the very least, slow down your app.
                 </p>
                 <p>
-                  There are a couple of ways to take care of this: You can make a JavaScript variable or two to act as containers and append them to the query, or add a static string of all the information that appends itself to the end.
-                  If you have a lot of parameters, the variable containers may be the cleanest way to go. But, if it is only one or two parameters it may be easier to just add a static string. This decision
+                  There are a couple of ways to take care of this: You can make a JavaScript variable or two to act as containers which are appended to the query, or add a static string of all the information directly on the query.
+                  If you have a lot of parameters, the variable containers may be the cleanest way to go. But, if it is only one or two parameters it can be easier to just add a static string. This decision
                   can be based on personal preference.
                 </p>
                 </div>
@@ -194,15 +204,40 @@
                   Let’s practice on a path with more variables. Not all are required so a form is set up with a few of the arguments ready to go,
                   leaving room for you to add a few to test your skills. Unfortunately, jsFiddle will not process the getJSON request. I still put the code up so you can copy it to tinker and test it in your
                   browser.
-                </p>             
+                </p>
                 <p class="note">
-                  Note: Feel free to copy
-                   the code to new files on your computer and test it out in your browser. If the fiddle isn't loading properly you can find it <a href="//jsfiddle.net/spiffiKay/85t37n2s">here</a>.
+                  If the fiddle isn't loading properly you can find it <a href="//jsfiddle.net/spiffiKay/85t37n2s">here</a>.
                 </p>
                 <p>
                 <script class="fiddle" async src="//jsfiddle.net/spiffiKay/85t37n2s/embed/"></script>
               </p>
-                </div>
+              <p>
+                We are about to the end, you are equipped with all the tools you need to utilize this API for your app. But first, I want to focus on a couple more things in the code that will help you get the
+                most out of this API:
+              </p>
+              <img src="picpath.png" />
+              <img src="piciter.png" />
+              <p>
+                First, I wanted to blatantly point out the path in the code as well as in the information in the console. Eventually this will seem silly to point out, but when you are starting out it can be very confusing.
+              </p>
+              <p>
+                Second, I pointed out the path and the code for the pictures for a reason. One, I wanted to highlight that if there is repetitive data in the response you can iterate to work your way through it. Two, both
+                the pictures as well as the location appends on the same HTML id more than once. You can build meaningful data with less code by doing this, saving yourself a lot of trouble.
+              </p>
+            </div>
+            <div class="wells" id="white">
+              <h4>Well, there you have it.</h4>
+              <p>
+                That's the tutorial. You should be able to apply everything you've learned to hone your app any way you'd like.
+              </p>
+              <p>
+                The next page is a working version of the fiddle above. I included it since the fiddle wouldn't let the getJSON call through. Go, check it out.
+              </p>
+              <img src="pitbullkisses.jpg" />
+            </div>
+            <div id="next">
+              <a href="#" id="nextPage" class="btn btn-lg btn-default">Example API Page  <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></a>
+              </div>
             </div>
           </div>
         </div>

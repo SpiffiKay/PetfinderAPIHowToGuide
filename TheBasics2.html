@@ -1,254 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Custom styles for this template -->
-    <script src="TheBasics2.js"></script>
-    <script src="navbutton.js"></script>
-    <link href="Universal.css" rel="stylesheet">
-    <link href="TheBasics2.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <script src="TheBasics2.js"></script>
+  <script src="navbutton.js"></script>
+  <link href="Universal.css" rel="stylesheet">
+  <link href="TheBasics2.css" rel="stylesheet">
 
-    <title>GET Method, JSON, and jQuery</title>
-  </head>
-  <body>
-    <div class="site-wrapper">
-      <div class="site-wrapper-inner">
-        <div class="site-container">
-          <div class="navigate clearfix-site">
-            <div class="inner">
-              <!--top of page navigation-->
-              <div class="navbar-header">
-                <img id="navLogo" src="petfinder_logo.jpg" />
-                  <ul class="nav navigate-nav">
-                    <h4 id="api">API How-To-Guide</h4>
-                    <div class="btn-group">
-                    <button type="button" id="navButton" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li id="basic"><a href="#">What is an API?</a></li>
-                      <li id="basic"><a href="#">What is an API?</a></li>
-                      <li id="basic2"><a href="#">GET, JSON and jQuery</a></li>
-                      <li id="setup"><a href="#">Set It Up</a></li>
-                      <li id="use1"><a href="#">Utilizing the API </a></li>
-                    </ul>
-                    </div>
+  <title>GET Method, JSON, and jQuery</title>
+</head>
+<body>
+  <div class="site-wrapper">
+    <div class="site-wrapper-inner">
+      <div class="site-container">
+        <div class="navigate clearfix-site">
+          <div class="inner">
+            <!--top of page navigation-->
+            <div class="navbar-header">
+              <img id="navLogo" src="petfinder_logo.jpg" />
+              <ul class="nav navigate-nav">
+                <h4 id="api">API How-To-Guide</h4>
+                <div class="btn-group">
+                  <button type="button" id="navButton" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li id="basic"><a href="#">What is an API?</a></li>
+                    <li id="basic"><a href="#">What is an API?</a></li>
+                    <li id="basic2"><a href="#">GET, JSON and jQuery</a></li>
+                    <li id="setup"><a href="#">Set It Up</a></li>
+                    <li id="use1"><a href="#">Utilizing the API </a></li>
+                    <li id="use2"><a href="#">Example Page </a></li>
                   </ul>
                 </div>
-              </div>
+              </ul>
+            </div>
+          </div>
 
-              <div class="site-heading">
-                <br />
-                <br />
-                <h1>GET Method, JSON, and jQuery</h1>
-              </div>
+          <div class="site-heading">
+            <br />
+            <br />
+            <h1>GET Method, JSON, and jQuery</h1>
+          </div>
 
-              <div class="wells" id="lighter">
-                <h3>GET Method</h3>
-                <p>
-                  To communicate with the Petfinder API we must use the GET method. GET requests send the information needed by the target, usually a server, in the URL
-                  by appending it to the end. Whether you know it or not, you have seen this many times. If you didn’t know what to look for it is very likely it just looked like random garbled code.
-                  It is important that you understand what this seemingly garbled code stands for because this is how you interact with the API.
-                   </p>
-                   <h4>The URL</h4>
-                   <p>
-                     URL stands for Uniform Resource Locater and it is the address of the resource you are requesting.
-                     The URL can be broken down into parts, each part getting more and more specific until it maps to exactly
-                     what you want. Similarly, if someone wants to send you a package, they need to know all the details that will
-                     route the package to your house. They need your home address, which is comprised of your country, state, city,
-                     street, house number, and possibly apartment number. If they are missing any part, aside from the country,
-                     it is very likely you won't get your package. The same goes for the URL. If you are missing any part of it, aside from the
-                     HTTP, you probably aren’t going to get where you are trying to go.
+          <div class="wells" id="lighter">
+            <h3>GET Method</h3>
+            <p>
+              To communicate with the Petfinder API we must use the GET method. GET requests send the information needed by the target, usually a server, in the URL
+              by appending it to the end. Whether you know it or not, you have seen this many times. If you didn’t know what to look for it is very likely it just looked like random garbled code.
+              It is important that you understand what this seemingly garbled code stands for because this is how you interact with the API.
+            </p>
+            <h4>The URL</h4>
+            <p>
+              URL stands for Uniform Resource Locater and it is the address of the resource you are requesting.
+              The URL can be broken down into parts, each part getting more and more specific until it maps to exactly
+              what you want. Similarly, if someone wants to send you a package, they need to know all the details that will
+              route the package to your house. They need your home address, which is comprised of your country, state, city,
+              street, house number, and possibly apartment number. If they are missing any part, aside from the country,
+              it is very likely you won't get your package. The same goes for the URL. If you are missing any part of it, aside from the
+              HTTP, you probably aren’t going to get where you are trying to go.
 
-                </p>
-                <p>
-                  Let's take a look at the sample code from the Petfinder API documentation:
-                </p>
-                <img id="exUrl" src="exurl.png" />
-                <div class="dropdown">
-                  <ul class="rest">
-                    <li>
-                      <button id="a" type="button" class="btn btn-info" data-toggle="collapse" data-target="#http">HTTP  <span class="caret"></span></button>
-                        <div id="http" class="collapse">
-                        <p class="list">
-                          <code>http:</code> (HyperText Transfer Protocol) This is the request-response protocol between the client and server.
-          	            </p>
-          	            <p class="list">
-                          When the internet was new, this always needed to be in front of the URL or else it wouldn't work. Now, it would be a safe bet that you
-                          never write it in front of a URL you are typing from memory, yet it still works. This is because it can be assumed that every URL is
-                          using HTTP, the same way a letter sent within the United States will still get there without USA written on it. If you
-                          look at the rest of the address format, there are hints, such as the state it is going to, that imply its destination is in this country.
-                          URLs all follow a precise format which implies it is following correct protocol.
+            </p>
+            <p>
+              Let's take a look at the sample code from the Petfinder API documentation:
+            </p>
+            <img id="exUrl" src="exurl.png" />
+            <div class="dropdown">
+              <ul class="rest">
+                <li>
+                  <button id="a" type="button" class="btn btn-info" data-toggle="collapse" data-target="#http">HTTP  <span class="caret"></span></button>
+                  <div id="http" class="collapse">
+                    <p class="list">
+                      <code>http:</code> (HyperText Transfer Protocol) This is the request-response protocol between the client and server.
+                    </p>
+                    <p class="list">
+                      When the internet was new, this always needed to be in front of the URL or else it wouldn't work. Now, it would be a safe bet that you
+                      never write it in front of a URL you are typing from memory, yet it still works. This is because it can be assumed that every URL is
+                      using HTTP, the same way a letter sent within the United States will still get there without USA written on it. If you
+                      look at the rest of the address format, there are hints, such as the state it is going to, that imply its destination is in this country.
+                      URLs all follow a precise format which implies it is following correct protocol.
 
-          	             </p>
-                         <p class="list">
-                         Note: If you want to add a level of security <a href="https://en.wikipedia.org/wiki/HTTPS"> HTTPS </a> should still be included.
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <button id="b" type="button" class="btn btn-info" data-toggle="collapse" data-target="#domain">Domain Name  <span class="caret"></span></button>
-                        <div id="domain" class="collapse">
-                        <p class="list">
-                        <code>api.petfinder.com</code> This is pretty self explanatory.
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <button id="c" type="button" class="btn btn-info" data-toggle="collapse" data-target="#path">Path  <span class="caret"></span></button>
-                      <div id="path" class="collapse">
-                        <p class="list">
-                          <code>my.method</code> Directions to the destination. The path starts with a single slash (never double), and any subsequent segments are separated with slashes. The segments
-                          are usually in a specific hierarchical order like the file path on your OS. While the path may be empty (no extra information after the domain), it is always defined.
-                          Finding your way to the main page with nothing more than the domain name is considered following a path.
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <button id="d" type="button" class="btn btn-info" data-toggle="collapse" data-target="#urlquery">Query  <span class="caret"></span></button>
-                      <div id="urlquery" class="collapse">
-                        <p class="list">
-                          <code>?key=12345&arg1=foo&token=67890&sig=abcdef</code> represents the information being transferred to the server in a GET
-                          request. Most parameters are formatted as <code>name=info</code> with <code>&</code> between each set of values.
-                        </p>
-                      </div>
-                    </li>
-                  </ul>
-              </div>
-                <p>
-                  Here is code for a basic GET form. You see the results from sending the GET request, but this at least gives you code to play with. You
-                  can try adding your own fields to the form.
-                  <p class="note">
-                    It has been brought to my attention that some browsers have trouble with the embedded fiddle. If your fiddle isn't showing any tabs on the top
-                    here is the <a href="//jsfiddle.net/spiffiKay/thy8wunc">link</a> where you can tinker with this code.
-                  </p>
-                  <p>
+                    </p>
+                    <p class="list">
+                      Note: If you want to add a level of security <a href="https://en.wikipedia.org/wiki/HTTPS"> HTTPS </a> should still be included.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <button id="b" type="button" class="btn btn-info" data-toggle="collapse" data-target="#domain">Domain Name  <span class="caret"></span></button>
+                  <div id="domain" class="collapse">
+                    <p class="list">
+                      <code>api.petfinder.com</code> This is pretty self explanatory.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <button id="c" type="button" class="btn btn-info" data-toggle="collapse" data-target="#path">Path  <span class="caret"></span></button>
+                  <div id="path" class="collapse">
+                    <p class="list">
+                      <code>my.method</code> Directions to the destination. The path starts with a single slash (never double), and any subsequent segments are separated with slashes. The segments
+                      are usually in a specific hierarchical order like the file path on your OS. While the path may be empty (no extra information after the domain), it is always defined.
+                      Finding your way to the main page with nothing more than the domain name is considered following a path.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <button id="d" type="button" class="btn btn-info" data-toggle="collapse" data-target="#urlquery">Query  <span class="caret"></span></button>
+                  <div id="urlquery" class="collapse">
+                    <p class="list">
+                      <code>?key=12345&arg1=foo&token=67890&sig=abcdef</code> represents the information being transferred to the server in a GET
+                      request. Most parameters are formatted as <code>name=info</code> with <code>&</code> between each set of values.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <p>
+              Here is code for a basic GET form. You see the results from sending the GET request, but this at least gives you code to play with. You
+              can try adding your own fields to the form.
+              <p class="note">
+                It has been brought to my attention that some browsers have trouble with the embedded fiddle. If your fiddle isn't showing any tabs on the top
+                here is the <a href="//jsfiddle.net/spiffiKay/thy8wunc">link</a> where you can tinker with this code.
+              </p>
+              <p>
                 <script clas="fiddle" async src="//jsfiddle.net/spiffiKay/thy8wunc/embed/html,result/"></script>
-                </p>
-                <p>
-                  This is the simple form this code creates with the fields filled out and ready to send:
-                  <img src="GETForm.png" />
-                  And this is the query line appended to the end of the URL when the GET form above is sent:
-                  <img id="query" src="queryline.png" />
-                </p>
-                <p>
-                  Let's break this query down:
-                </p>
-                <p>
-                  The white question mark signifies the beginning of the query. The label and input for the first field on the form are in pink.
-                  <code>text_input</code> is the label and <code>Send+me%21</code> (%21 is the !) is the input. Their relation to each other is signified with  <code>=</code>.
-                  The green ampersand <code>&</code> links the two fields from the form together. There is generally an ampersand between each set of data.
-                   The information for the second field <code>numerical_input=4321</code> is in blue.
-                </p>
-              </div>
+              </p>
+              <p>
+                This is the simple form this code creates with the fields filled out and ready to send:
+                <img src="GETForm.png" />
+                And this is the query line appended to the end of the URL when the GET form above is sent:
+                <img id="query" src="queryline.png" />
+              </p>
+              <p>
+                Let's break this query down:
+              </p>
+              <p>
+                The white question mark signifies the beginning of the query. The label and input for the first field on the form are in pink.
+                <code>text_input</code> is the label and <code>Send+me%21</code> (%21 is the !) is the input. Their relation to each other is signified with  <code>=</code>.
+                The green ampersand <code>&</code> links the two fields from the form together. There is generally an ampersand between each set of data.
+                The information for the second field <code>numerical_input=4321</code> is in blue.
+              </p>
+            </div>
 
-              <div class="wells" id="white">
-                <h3>JSON</h3>
-                <p>
-                  <a id="tooBright" href="http://www.json.org/">JSON</a> stands for JavaScript Object Notation. It is a data syntax. When requesting data from
-                  the API, all the data must be sent in text form. Communications with the Petfinder API can be in XML or JSON format. XML is a little dated and JSON is
-                  more widely used now, so that is what we will be using. Javascript objects can easily be changed into JSON and vice versa, making
-                  sending and using data simple.
-                </p>
-                <p>
-                  JavaScript and JSON objects are very similar, and it is easy to change from one type of object to another. A JSON object is basically a JavaScript object converted into a string.
-                  <code>JSON.stringify()</code> will turn a JS object into a JSON string object and <code>JSON.parse()</code> turns the JSON string into a JavaScrpt object.
-                </p>
-                <img id="objects" src="JSONtoJS.png" />
-                <p>
-                  Here is an example of a JSON object parsed into the JavaScript object which is then used with the HTML. Feel free to tinker with it a bit.
-                </p>
-                <p class="note">
-                  Note: Again, <a href="//jsfiddle.net/spiffiKay/bz8o1ymh/">here</a> is the link if the fiddle isn't playing nice on your browser.
-                </p>
-                <p>
-                  <script class="fiddle" async src="//jsfiddle.net/spiffiKay/bz8o1ymh/embed/js,html,result/"></script>
-                </p>
-                <h4>JSONP</h4>
-                <p>
-                  Now that you have the basics of JSON in your repoitiore, we need to get into <a href="https://www.w3schools.com/js/js_json_jsonp.asp">JSONP</a> because the Petfinder API's response will be in this format.
-                  JSONP stands for 'JSON with padding', and is used to avoid the issues that come with traditional <a href="https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started">AJAX</a> calls.
-                  This is a fairly dated protocol, and due to it's lack of security it is widely being replaced by <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a>. However, as made
-                  evident by the Petfinder API, sometimes older protocol lingers here and there, so it is always a good idea to learn these methods along with the most modern ones.
-                </p>
-                <p>
-                  JSONP communicates with it's target via the script tag instead of the XMLHttpRequest object used by AJAX. This makes life simpler, but also less safe. For our purposes, you just need to know that
-                  the requesting URL must end in <code>callback=?</code> and that the server response does not need parsed. The <code>callback=?</code> tells the server you are interacting with that it is a JSONP call and not a JSON call,
-                  and it responds accordingly.
-                </p>
-              </div>
+            <div class="wells" id="white">
+              <h3>JSON</h3>
+              <p>
+                <a id="tooBright" href="http://www.json.org/">JSON</a> stands for JavaScript Object Notation. It is a data syntax. When requesting data from
+                the API, all the data must be sent in text form. Communications with the Petfinder API can be in XML or JSON format. XML is a little dated and JSON is
+                more widely used now, so that is what we will be using. Javascript objects can easily be changed into JSON and vice versa, making
+                sending and using data simple.
+              </p>
+              <p>
+                JavaScript and JSON objects are very similar, and it is easy to change from one type of object to another. A JSON object is basically a JavaScript object converted into a string.
+                <code>JSON.stringify()</code> will turn a JS object into a JSON string object and <code>JSON.parse()</code> turns the JSON string into a JavaScrpt object.
+              </p>
+              <img id="objects" src="JSONtoJS.png" />
+              <p>
+                Here is an example of a JSON object parsed into the JavaScript object which is then used with the HTML. Feel free to tinker with it a bit.
+              </p>
+              <p class="note">
+                Note: Again, <a href="//jsfiddle.net/spiffiKay/bz8o1ymh/">here</a> is the link if the fiddle isn't playing nice on your browser.
+              </p>
+              <p>
+                <script class="fiddle" async src="//jsfiddle.net/spiffiKay/bz8o1ymh/embed/js,html,result/"></script>
+              </p>
+              <h4>JSONP</h4>
+              <p>
+                Now that you have the basics of JSON in your repoitiore, we need to get into <a href="https://www.w3schools.com/js/js_json_jsonp.asp">JSONP</a> because the Petfinder API's response will be in this format.
+                JSONP stands for 'JSON with padding', and is used to avoid the issues that come with traditional <a href="https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started">AJAX</a> calls.
+                This is a fairly dated protocol, and due to it's lack of security it is widely being replaced by <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a>. However, as made
+                evident by the Petfinder API, sometimes older protocol lingers here and there, so it is always a good idea to learn these methods along with the most modern ones.
+              </p>
+              <p>
+                JSONP communicates with it's target via the script tag instead of the XMLHttpRequest object used by AJAX. This makes life simpler, but also less safe. For our purposes, you just need to know that
+                the requesting URL must end in <code>callback=?</code> and that the server response does not need parsed. The <code>callback=?</code> tells the server you are interacting with that it is a JSONP call and not a JSON call,
+                and it responds accordingly.
+              </p>
+            </div>
 
-              <div class="wells" id="lighter">
-                <h3>jQuery</h3>
-                <p>
-                  jQuery is a JavaScript library, and it exists to make your life easier. It is used extensively all over the internet.
-                </p>
-                <p>
-                  jQuery is most likely being used on the site of any major company you can think of, is extremely popular and all major browsers support it. If you already have a rudimentary understanding
-                  of HTML, CSS, and JavaScript it is easy to learn and it cuts down on the amount of code you need to write. <a href="https://www.w3schools.com/jquery/default.asp">This</a> is a
-                  great tutorial to get you started. There is a bunch of functionality jQuery can add to your site, but in this guide we are focusing mainly on the jQuery GET method.
-                </p>
-                <p>
-                  To use jQuery you can download and host the library yourself, or you can include a <a href="http://www.webopedia.com/TERM/C/CDN.html">CDN</a> (Content Delivery Network) in your
-                  code from a site that hosts it. In this site and for the API we will use the <a href="https://developers.google.com/speed/libraries/"> Google CDN</a>. It should be placed in the header
-                  of the HTML file as demonstrated below.
-                </p>
-                <img src="jQueryCDN.png" />
-                <h4> jQuery $.get() Method, $getJSON() Method, and AJAX</h4>
-                <p>
-                  As you know, the GET method requests data from the server via a GET request. The jQuery $.get() method is no different, it just has different syntax than you may be used to. The
-                  example above didn’t use JavaScript because there was no need to complicate the concept with syntax we won’t be working with.
-                </p>
-                <p>
-                  <code> $.get()</code> is an <a href="https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started">AJAX</a> method. To put it simply, AJAX is a way to communicate back and forth with the server.
-                   What makes it unique and beneficial is that parts of the page with which the user is interacting can potentially be updated without needing to update the entire page. We could go into a lot of
-                   detail about AJAX and its functionality, but for our purposes this is about all we need to know.
-                 </p>
-                 <p>
-                   <code>$.getJSON()</code> is an <a href="https://www.w3schools.com/jquery/ajax_getjson.asp">AJAX HTTP GET method</a>, and we will be using it to send our JSONP request. Confused yet? Admittedly, on paper
-                   circumventing traditional AJAX requests with JSONP, followed by sending this data via a modified AJAX request doesn't make a lot of sense. This is a case of someone finding a way to fix something annoying,
-                   then over time someone else coming up with something else to fix whatever the previous fix broke. It happens a lot. Fortunately, most the time a third someone else comes along and brings with them an entirely new protocol
-                   that completely bypasses the rats nest that has been created (see <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a>). Unfortunately for us, our API hasn't gotten that far, but such is life.
-                 </p>
-                 <p>
-                   This is the sample getJSON method from the Petfinder API documentation:
-                 </p>
-                 <img id="exGet" src="exget.png" />
-                 <p>
-                   The body of the method is an example of a way to test if the transaction was successful. This is an important step, but doesn't use the data in the response in any way.
-                    We will look at the ways we can use the API information in the implementation section.
-                </p>
-                <p>
-                  As you can see, the URL is similar to what we looked at above. If you understand what information the query is sending to the server
-                  you are ready to start using their API.
-                </p>
-              </div>
+            <div class="wells" id="lighter">
+              <h3>jQuery</h3>
+              <p>
+                jQuery is a JavaScript library, and it exists to make your life easier. It is used extensively all over the internet.
+              </p>
+              <p>
+                jQuery is most likely being used on the site of any major company you can think of, is extremely popular and all major browsers support it. If you already have a rudimentary understanding
+                of HTML, CSS, and JavaScript it is easy to learn and it cuts down on the amount of code you need to write. <a href="https://www.w3schools.com/jquery/default.asp">This</a> is a
+                great tutorial to get you started. There is a bunch of functionality jQuery can add to your site, but in this guide we are focusing mainly on the jQuery GET method.
+              </p>
+              <p>
+                To use jQuery you can download and host the library yourself, or you can include a <a href="http://www.webopedia.com/TERM/C/CDN.html">CDN</a> (Content Delivery Network) in your
+                code from a site that hosts it. In this site and for the API we will use the <a href="https://developers.google.com/speed/libraries/"> Google CDN</a>. It should be placed in the header
+                of the HTML file as demonstrated below.
+              </p>
+              <img src="jQueryCDN.png" />
+              <h4> jQuery $.get() Method, $getJSON() Method, and AJAX</h4>
+              <p>
+                As you know, the GET method requests data from the server via a GET request. The jQuery $.get() method is no different, it just has different syntax than you may be used to. The
+                example above didn’t use JavaScript because there was no need to complicate the concept with syntax we won’t be working with.
+              </p>
+              <p>
+                <code> $.get()</code> is an <a href="https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started">AJAX</a> method. To put it simply, AJAX is a way to communicate back and forth with the server.
+                What makes it unique and beneficial is that parts of the page with which the user is interacting can potentially be updated without needing to update the entire page. We could go into a lot of
+                detail about AJAX and its functionality, but for our purposes this is about all we need to know.
+              </p>
+              <p>
+                <code>$.getJSON()</code> is an <a href="https://www.w3schools.com/jquery/ajax_getjson.asp">AJAX HTTP GET method</a>, and we will be using it to send our JSONP request. Confused yet? Admittedly, on paper
+                circumventing traditional AJAX requests with JSONP, followed by sending this data via a modified AJAX request doesn't make a lot of sense. This is a case of someone finding a way to fix something annoying,
+                then over time someone else coming up with something else to fix whatever the previous fix broke. It happens a lot. Fortunately, most the time a third someone else comes along and brings with them an entirely new protocol
+                that completely bypasses the rats nest that has been created (see <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a>). Unfortunately for us, our API hasn't gotten that far, but such is life.
+              </p>
+              <p>
+                This is the sample getJSON method from the Petfinder API documentation:
+              </p>
+              <img id="exGet" src="exget.png" />
+              <p>
+                The body of the method is an example of a way to test if the transaction was successful. This is an important step, but doesn't use the data in the response in any way.
+                We will look at the ways we can use the API information in the implementation section.
+              </p>
+              <p>
+                As you can see, the URL is similar to what we looked at above. If you understand what information the query is sending to the server
+                you are ready to start using their API.
+              </p>
+            </div>
 
-              <div id="next">
+            <div id="next">
               <a href="#" id="nextPage" class="btn btn-lg btn-default">Set Up Your API Credentials  <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></a>
-              </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
-</html>
+      <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+      <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    </body>
+    </html>

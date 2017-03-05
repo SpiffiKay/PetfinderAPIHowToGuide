@@ -15,7 +15,7 @@
     <link href="Universal.css" rel="stylesheet">
   <script src="navbutton.js"></script>
 
-    <title>Advanced API Use</title>
+    <title>Example Page</title>
   </head>
   <body>
     <div class="site-wrapper">
@@ -36,8 +36,8 @@
                       <li id="basic"><a href="#">What is an API?</a></li>
                       <li id="basic2"><a href="#">GET, JSON and jQuery</a></li>
                       <li id="setup"><a href="#">Set It Up</a></li>
-                      <li id="use1"><a href="#">Utilizing the API (Basic)</a></li>
-                      <li id="use2"><a href="#">Utilizing the API (Advanced)</a></li>
+                      <li id="use1"><a href="#">Utilizing the API</a></li>
+                      <li id="use2"><a href="#">Example Page </a></li>
                     </ul>
                     </div>
                   </ul>
@@ -47,14 +47,95 @@
               <div class="site-heading">
                 <br />
                 <br />
-                <h1>Implement your API Part I</h1>
+                <h1>Example Page</h1>
+                <h3>Here's your chance to see what we've built in action.</h3>
               </div>
 
               <div class="wells" id="dark">
-                <h3>First things first.</h3>
-                <p>If you haven't already, you need to sign up for a Petfinder account on their main site <a href="https://www.petfinder.com/user/register?next=https://www.petfinder.com/developers/api-key">here.</a></p>
-                <p>Once you have an account, you will access everything for the API from the developer page <a href="https://www.petfinder.com/developers/api-key">as seen below.</a></p>
+                <fieldset>
+                  <form>
+                    <h4>Find Your Next Pet</h4>      
+                  <br />
+                  <label>Enter your zipcode:</label>
+                  <br />
+                    <input type="number" name="location" id="location">
+                    <br />
+                  <label>Enter type of animal:</label>
+                  <p>
+                    (cat, dog, horse, pig, reptile)
+                  </p>
+                    <input type="text" name="animal" id="animal">
+                    <br />
+                  <label>What size:</label>
+                  <p>
+                    (S = small, M = medium, L = large, XL = extra-large
+                    must be caps)
+                  </p>
+                    <input type="text" name="size" id="size">
+                    <br />
+                   <label>What gender:</label>
+                  <p>
+                     (M = male, F = female, must be caps)
+                  </p>
+                      <input type="text" name="sex" id="sex">
+                   <br />
+                   <button >Find My Pet</button>
+                   </form>
+                </fieldset>
+                 <div>
+                   <p>
+                     Your data string from the form:
+                   </p>
+                   <p id="query">
+                   </p>
+                 </div>
+                   <div id="pics">
 
+                   </div>
+                   <div>
+                   <ul>
+                     <li id="shelterid">
+                       Shelter ID:
+                     </li>
+                     <li id="petid">
+                       Pet ID:
+                     </li>
+                     <li id="phone">
+                       Shelter Number:
+                     </li>
+                     <li id="locationOut">
+                        Location:
+                     </li>
+                     <br />
+                     <li id="animalOut">
+                       Animal Type:
+                     </li>
+                     <br />
+                     <li id="nameOut">
+                       Name:
+                     </li>
+                     <br />
+                     <li id="breedOut">
+                       Breed:
+                     </li>
+                     <br />
+                     <li id="sizeOut">
+                       Size:
+                     </li>
+                     <br />
+                     <li id="gender">
+                       Gender:
+                     </li>
+                     <br />
+                     <li id="ageOut">
+                       Age:
+                     </li>
+                     <br />
+                     <li id="description">
+                        Description:
+                     </li>
+                   </ul>
+                 </div>
               </div>
 
             </div>
