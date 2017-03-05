@@ -45,16 +45,22 @@ a.btn-lg{
 #exurl{
   height: 60%;
   width: 60%;
-
 }
 
+.note{
+    color: 	#B0E0E6;
+    font-size: 90%;
+
+}
 #samp{
   height: 60%;
   width: 60%;
   padding-right: 30%;
 }
 
-#console{
+#console,
+#success,
+#error{
   height: 100%;
   width: 100%;
   padding-right: 20%;

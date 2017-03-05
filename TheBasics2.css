@@ -42,6 +42,11 @@ a.btn-lg{
   color: #FF7F50;
 }
 
+.note{
+  color: #007d80;
+  font-size: 90%;
+}
+
 .btn-info,
 .btn-info:hover,
 .btn-info:focus,
