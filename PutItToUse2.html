@@ -1,157 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="PutItToUse2.js"></script>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Custom styles for this template -->
-    <link href="Universal.css" rel="stylesheet">
-  <script src="navbutton.js"></script>
+ </head>
+<body>
+   <fieldset>
+     <form>
+     <Legend>
+       Find Your Next Pet
+     </Legend>
+     <br />
+     <label>Enter your zipcode:</label>
+     <br />
+       <input type="number" name="location" id="location">
+       <br />
+     <label>Enter type of animal:</label>
+     <p>
+       (cat, dog, horse, pig, reptile)
+     </p>
+       <input type="text" name="animal" id="animal">
+       <br />
+     <label>What size:</label>
+     <p>
+       (S = small, M = medium, L = large, XL = extra-large
+       must be caps)
+     </p>
+       <input type="text" name="size" id="size">
+       <br />
+      <label>What gender:</label>
+     <p>
+        (M = male, F = female, must be caps)
+     </p>
+         <input type="text" name="sex" id="sex">
+      <br />
+      <button >Find My Pet</button>
+      </form>
+   </fieldset>
+    <div>
+      <p>
+        Your data string from the form:
+      </p>
+      <p id="query">
+      </p>
+    </div>
+      <div id="pics">
 
-    <title>Example Page</title>
-  </head>
-  <body>
-    <div class="site-wrapper">
-      <div class="site-wrapper-inner">
-        <div class="site-container">
-          <div class="navigate clearfix-site">
-            <div class="inner">
-              <!--top of page navigation-->
-              <div class="navbar-header">
-                <img id="navLogo" src="petfinder_logo.jpg" />
-                  <ul class="nav navigate-nav">
-                    <h4 id="api">API How-To-Guide</h4>
-                    <div class="btn-group">
-                    <button type="button" id="navButton" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li id="basic"><a href="#">What is an API?</a></li>
-                      <li id="basic2"><a href="#">GET, JSON and jQuery</a></li>
-                      <li id="setup"><a href="#">Set It Up</a></li>
-                      <li id="use1"><a href="#">Utilizing the API</a></li>
-                      <li id="use2"><a href="#">Example Page </a></li>
-                    </ul>
-                    </div>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="site-heading">
-                <br />
-                <br />
-                <h1>Example Page</h1>
-                <h3>Here's your chance to see what we've built in action.</h3>
-              </div>
-
-              <div class="wells" id="dark">
-                <fieldset>
-                  <form>
-                    <h4>Find Your Next Pet</h4>      
-                  <br />
-                  <label>Enter your zipcode:</label>
-                  <br />
-                    <input type="number" name="location" id="location">
-                    <br />
-                  <label>Enter type of animal:</label>
-                  <p>
-                    (cat, dog, horse, pig, reptile)
-                  </p>
-                    <input type="text" name="animal" id="animal">
-                    <br />
-                  <label>What size:</label>
-                  <p>
-                    (S = small, M = medium, L = large, XL = extra-large
-                    must be caps)
-                  </p>
-                    <input type="text" name="size" id="size">
-                    <br />
-                   <label>What gender:</label>
-                  <p>
-                     (M = male, F = female, must be caps)
-                  </p>
-                      <input type="text" name="sex" id="sex">
-                   <br />
-                   <button >Find My Pet</button>
-                   </form>
-                </fieldset>
-                 <div>
-                   <p>
-                     Your data string from the form:
-                   </p>
-                   <p id="query">
-                   </p>
-                 </div>
-                   <div id="pics">
-
-                   </div>
-                   <div>
-                   <ul>
-                     <li id="shelterid">
-                       Shelter ID:
-                     </li>
-                     <li id="petid">
-                       Pet ID:
-                     </li>
-                     <li id="phone">
-                       Shelter Number:
-                     </li>
-                     <li id="locationOut">
-                        Location:
-                     </li>
-                     <br />
-                     <li id="animalOut">
-                       Animal Type:
-                     </li>
-                     <br />
-                     <li id="nameOut">
-                       Name:
-                     </li>
-                     <br />
-                     <li id="breedOut">
-                       Breed:
-                     </li>
-                     <br />
-                     <li id="sizeOut">
-                       Size:
-                     </li>
-                     <br />
-                     <li id="gender">
-                       Gender:
-                     </li>
-                     <br />
-                     <li id="ageOut">
-                       Age:
-                     </li>
-                     <br />
-                     <li id="description">
-                        Description:
-                     </li>
-                   </ul>
-                 </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
       </div>
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
-</html>
+      <div>
+      <ul>
+        <li id="shelterid">
+          Shelter ID:
+        </li>
+        <li id="petid">
+          Pet ID:
+        </li>
+        <li id="phone">
+          Shelter Number:
+        </li>
+        <li id="locationOut">
+           Location:
+        </li>
+        <br />
+        <li id="animalOut">
+          Animal Type:
+        </li>
+        <br />
+        <li id="nameOut">
+          Name:
+        </li>
+        <br />
+        <li id="breedOut">
+          Breed:
+        </li>
+        <br />
+        <li id="sizeOut">
+          Size:
+        </li>
+        <br />
+        <li id="gender">
+          Gender:
+        </li>
+        <br />
+        <li id="ageOut">
+          Age:
+        </li>
+        <br />
+        <li id="description">
+           Description:
+        </li>
+      </ul>
+    </div>
+ </body>
