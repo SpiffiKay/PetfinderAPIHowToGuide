@@ -38,8 +38,7 @@
                       <li id="basic"><a href="#">What is an API?</a></li>
                     <li id="basic2"><a href="#">GET, JSON and jQuery</a></li>
                     <li id="setup"><a href="#">Set It Up</a></li>
-                    <li id="use1"><a href="#">Utilizing the API (Basic)</a></li>
-                    <li id="use2"><a href="#">Utilizing the API (Advanced)</a></li>
+                    <li id="use1"><a href="#">Utilizing the API </a></li>
                     </ul>
                     </div>
                   </ul>
@@ -132,13 +131,12 @@
                         <div id="response" class="collapse">
                         <p class="list">
                           If everything goes as expected the server will send a response of data that you can use in your app.
-                          You can put the response variable provided in the documentation, in this case <code>petfinderBreedList</code>, in
-                          <code>console.log()</code> to the API's response in the console. If you open your browser's developer tools (usually <code>F12</code>) you should see something like this in
+                          If you open your browser's developer tools (usually <code>F12</code>) you should see something like this in
                           your console. I have put boxes around the information that we will want to start working with.
                         </p>
                         <img id="console" src="response1.png" />
                         <p class="list">
-                          This is an example of the information successfully returned from the API into the <code>console.log()</code>:
+                          This is another example of the information in the web console of your browser when it is successfully returned.
                         </p>
                         <img id="success" src="success.png" />
                         <p class="list">
@@ -175,12 +173,14 @@
                 <h4>Data Not Included on the User Form</h4>
                 <p>
                   The Petfinder API gives you a lot of room to customize the response you are going to get from them. This helps the user of your app find precisely what they are looking for.
-                  However, you probably don't want them to be in charge of all of these options. In the parameter list below there are options like offset, count, and output, along with format and the key, which we have already
-                  talked about. If the user could have control over these they could potentially break, or at the very least, slow down your app.
+                  However, you probably don't want them to be in charge of all of these options. In the parameter list below there are options like and output, format (as previously discussed) and the key.
+                   If the user could have control over certain arguments they could potentially break, or at the very least, slow down your app. Also, because the Petfinder API uses the $.getJSON method over
+                   the regular GET call, you need to add <code>callaback=?</code> to the end of your URL. It cannot go anywhere else. I will append it directly on the key because I always put the key as close to the
+                   end as possible for legibility.
                 </p>
                 <p>
                   There are a couple of ways to take care of this: You can make a JavaScript variable or two to act as containers and append them to the query, or add a static string of all the information that appends itself to the end.
-                  If you have a lot of parameters the variable containers may be the cleanest way to go. But, if it is only one or two parameters it may be easier to just add a static string. This decision
+                  If you have a lot of parameters, the variable containers may be the cleanest way to go. But, if it is only one or two parameters it may be easier to just add a static string. This decision
                   can be based on personal preference.
                 </p>
                 </div>
@@ -188,20 +188,17 @@
                 <p>
                   The Parameters:
                 </p>
-                <img id="petfind" src="petfind.png" />
+                <img id="petfind" src="petgetrandom.png" />
 
                 <p>
                   Let’s practice on a path with more variables. Not all are required so a form is set up with a few of the arguments ready to go,
-                  leaving room for you to add a few to test your skills. If everything is functioning correctly,  query data in a string (for your benefit),  as well as the specified return data will be printed.
-                </p>
+                  leaving room for you to add a few to test your skills. If everything is functioning correctly, it should print to screen: query data in a string (for your benefit), and the specified data returned by the API.
+                </p>               </p>
                 <p class="note">
-                  Without seeing the information in the console it will be hard to print new parameters you add to the form. If you did it right, it will still function, if you didn't it will break. I left the
-                  <code>console.log()</code> in the code. Feel free to copy the code to actual files and test it out in your browser.
+                  Note: Without seeing the information in the console it will be hard to print new parameters you add to the form. If you did it right, it will still function, if you didn't it will break. Feel free to copy
+                   the code to new files on your computer and test it out in your browser.
                 </p>
                 </div>
-              <div id="next">
-              <a href="#" id="nextPage" class="btn btn-lg btn-default">Let's Try A Little More Advanced  <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></a>
-              </div>
             </div>
           </div>
         </div>
