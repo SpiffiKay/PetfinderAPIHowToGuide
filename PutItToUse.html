@@ -138,6 +138,15 @@
                         </p>
                         <img id="console" src="response1.png" />
                         <p class="list">
+                          This is an example of the information successfully returned from the API into the <code>console.log()</code>:
+                        </p>
+                        <img id="success" src="success.png" />
+                        <p class="list">
+                          And here is an example of a failed call. Notice the error code is held in the status. The meaning of the numerical error codes are listed on the documentation page.
+                          Understanding the error that has been thrown can be very helpful for debugging.
+                        </p>
+                        <img src="error.png" />
+                        <p class="list">
                           Once you are successfully interacting with the API you can start developing your app around it.
                         </p>
                       </div>
@@ -158,8 +167,35 @@
                   the API fixing these problems.
                 </p>
                 <h4>Dynamically Interacting with the User</h4>
-              </div>
+                <p>
+                  It is time to put all your new shiny knowledge into action. We need to make a form so the user can tell us what they need, and a way
+                  to get this information into the URL query to send to the server. To do this, we will use a jQuery method to turn all the data into a nice query-ready string
+                  (I told you jQuery is here to make your life easier), then put that in a JavaScript variable. We will then append that variable, along with any pieces of data we want to include outside of user content, and the key.
+                </p>
+                <h4>Data Not Included on the User Form</h4>
+                <p>
+                  The Petfinder API gives you a lot of room to customize the response you are going to get from them. This helps the user of your app find precisely what they are looking for.
+                  However, you probably don't want them to be in charge of all of these options. In the parameter list below there are options like offset, count, and output, along with format and the key, which we have already
+                  talked about. If the user could have control over these they could potentially break, or at the very least, slow down your app.
+                </p>
+                <p>
+                  There are a couple of ways to take care of this: You can make a JavaScript variable or two to act as containers and append them to the query, or add a static string of all the information that appends itself to the end.
+                  If you have a lot of parameters the variable containers may be the cleanest way to go. But, if it is only one or two parameters it may be easier to just add a static string. This decision
+                  can be based on personal preference.
+                </p>
+                </div>
+                <div class="wells" id="med">
+                <p>
+                  The Parameters:
+                </p>
+                <img id="petfind" src="petfind.png" />
 
+                <p>
+                  Let’s practice with a path with more variables, though not all are required. We are still going to ignore the optional token here, Here is a form with a few of the arguments ready to go,
+                  leaving room for you to add a few to test your skills. If everything is functioning correctly, it should print to screen the query data in a string (for your benefit) as well as the specified return data.
+                </p>
+
+                </div>
               <div id="next">
               <a href="#" id="nextPage" class="btn btn-lg btn-default">Let's Try A Little More Advanced  <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></a>
               </div>
