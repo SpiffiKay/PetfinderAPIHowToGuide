@@ -8,7 +8,7 @@ $("form").on("submit", function(event){
   /*prints the query from the form to screen*/
   $("#query").append(query);
   /*get method*/
-$.getJSON("http://api.petfinder.com/pet.getRandom?format=json&" + query +  staticData + APIKey)
+$.getJSON("https://api.petfinder.com/pet.getRandom?format=json&" + query +  staticData + APIKey)
   .done( function(petApiData){
     var numPhotos = petApiData.petfinder.pet.media.photos.photo.length;
 
