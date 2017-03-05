@@ -173,6 +173,18 @@
                 <p>
                   <script class="fiddle" async src="//jsfiddle.net/spiffiKay/bz8o1ymh/embed/js,html,result/"></script>
                 </p>
+                <h4>JSONP</h4>
+                <p>
+                  Now that you have the basics of JSON in your repoitiore, we need to get into <a href="https://www.w3schools.com/js/js_json_jsonp.asp">JSONP</a> because the Petfinder API's response will be in this format.
+                  JSONP stands for 'JSON with padding', and is used to avoid the issues that come with traditional <a href="https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started">AJAX</a> calls.
+                  This is a fairly dated protocol, and due to it's lack of security it is widely being replaced by <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a>. However, as made
+                  evident by the Petfinder API, sometimes older protocol lingers here and there, so it is always a good idea to learn these methods along with the most modern ones.
+                </p>
+                <p>
+                  JSONP communicates with it's target via the script tag instead of the XMLHttpRequest object used by AJAX. This makes life simpler, but also less safe. For our purposes, you just need to know that
+                  the requesting URL must end in <code>callback=?</code> and that the server response does not need parsed. The <code>callback=?</code> tells the server you are interacting with that it is a JSONP call and not a JSON call,
+                  and it responds accordingly.
+                </p>
               </div>
 
               <div class="wells" id="lighter">
@@ -191,24 +203,33 @@
                   of the HTML file as demonstrated below.
                 </p>
                 <img src="jQueryCDN.png" />
-                <h4> jQuery $.get() Method and AJAX</h4>
+                <h4> jQuery $.get() Method, $getJSON() Method, and AJAX</h4>
                 <p>
                   As you know, the GET method requests data from the server via a GET request. The jQuery $.get() method is no different, it just has different syntax than you may be used to. The
                   example above didn’t use JavaScript because there was no need to complicate the concept with syntax we won’t be working with.
                 </p>
                 <p>
                   <code> $.get()</code> is an <a href="https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started">AJAX</a> method. To put it simply, AJAX is a way to communicate back and forth with the server.
-                   What makes it unique and beneficial is that i can potentially update parts of the page with which the user is interacting without needing to update the entire page. We could go into a lot of
+                   What makes it unique and beneficial is that parts of the page with which the user is interacting can potentially be updated without needing to update the entire page. We could go into a lot of
                    detail about AJAX and its functionality, but for our purposes this is about all we need to know.
                  </p>
                  <p>
-                   This is the sample GET method from the Petfinder API documentation:
+                   <code>$.getJSON()</code> is an <a href="https://www.w3schools.com/jquery/ajax_getjson.asp">AJAX HTTP GET method</a>, and we will be using it to send our JSONP request. Confused yet? Admittedly, on paper
+                   circumventing traditional AJAX requests with JSONP, followed by sending this data via a modified AJAX request doesn't make a lot of sense. This is a case of someone finding a way to fix something annoying,
+                   then over time someone else coming up with something else to fix whatever the previous fix broke. It happens a lot. Fortunately, most the time a third someone else comes along and brings with them an entirely new protocol
+                   that completely bypasses the rats nest that has been created (see <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a>). Unfortunately for us, our API hasn't gotten that far, but such is life.
+                 </p>
+                 <p>
+                   This is the sample getJSON method from the Petfinder API documentation:
                  </p>
                  <img id="exGet" src="exget.png" />
                  <p>
-                   The body of the method is an example of a way to use the information if the call is successful, or alert the user if an error occurs. We will look at the ways we can use the API
-                   information in the implementation section. As you can see, the URL is similar to what we looked at above. If you understand what information the query is sending to the server
-                    you are ready to start using their API.
+                   The body of the method is an example of a way to test if the transaction was successful. This is an important step, but doesn't use the data in the response in any way.
+                    We will look at the ways we can use the API information in the implementation section.
+                </p>
+                <p>
+                  As you can see, the URL is similar to what we looked at above. If you understand what information the query is sending to the server
+                  you are ready to start using their API.
                 </p>
               </div>
 
